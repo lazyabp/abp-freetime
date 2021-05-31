@@ -13,7 +13,7 @@ namespace Lazy.Abp.Permissions
             // 增加 MultiTenancySides.Host
             // var identityServerGroup = context.AddGroup(AbpIdentityServerPermissions.GroupName, L("Permissions:IdentityServer"), MultiTenancySides.Host);
 
-            // 与 LINGYUN.Abp.FeatureManagement.Client 模块搭配,这样干可以不依赖于模块优先级
+            // 与 Lazy.Abp.FeatureManagement.Client 模块搭配,这样干可以不依赖于模块优先级
             var identityServerGroup = context.GetGroupOrNull(AbpIdentityServerPermissions.GroupName);
             if (identityServerGroup == null)
             {
