@@ -41,7 +41,7 @@ namespace Lazy.Abp
                 options.Resources
                     .Add<LazyAbpResource>("en")
                     .AddBaseTypes(typeof(AbpValidationResource))
-                    .AddVirtualJson("/Lazy/Abp/LazyAbp/Localization/LazyAbp");
+                    .AddVirtualJson("/Lazy/Abp/Localization/LazyAbp");
             });
 
             Configure<AbpExceptionLocalizationOptions>(options =>
