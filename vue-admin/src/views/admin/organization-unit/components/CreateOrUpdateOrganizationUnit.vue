@@ -112,7 +112,10 @@ export default class CreateOrUpdateOrganizationUnit extends Vue {
           } else {
             const createOu = new OrganizationUnitCreate()
             createOu.displayName = this.organizationUnit.displayName
-            createOu.parentId = this.organizationUnitId
+            if (this.organizationUnitId) {
+              createOu.parentId
+            }
+            
             OrganizationUnitService
               .createOrganizationUnit(createOu)
               .then(ou => {

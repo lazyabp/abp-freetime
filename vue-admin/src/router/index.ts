@@ -166,14 +166,14 @@ export const asyncRoutes: RouteConfig[] = [
   },
   adminRouter,
   auditingRouter,
-  apigatewayRouter,
+  // apigatewayRouter,
   identityServerRouter,
-  containerRouter,
-  {
-    path: '*',
-    component: () => import(/* webpackChunkName: "error-page-404" */ '@/views/error-page/404.vue'),
-    meta: { hidden: true }
-  }
+  // containerRouter,
+  // {
+  //   path: '*',
+  //   component: () => import(/* webpackChunkName: "error-page-404" */ '@/views/error-page/404.vue'),
+  //   meta: { hidden: true }
+  // }
 ]
 
 const createRouter = () => new Router({

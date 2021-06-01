@@ -121,13 +121,13 @@ class Permission extends VuexModule implements IPermissionState {
     // }
 
     // 取消注释用来启用后端动态路由配置
-    const { items } = await MenuService.getMyMenuList(PlatformType.WebMvvm)
-    const dynamicRoutes = filterDynamicRoutes(generateTree(items))
-    this.SET_ROUTES(dynamicRoutes)
+    // const { items } = await MenuService.getMyMenuList(PlatformType.WebMvvm)
+    // const dynamicRoutes = filterDynamicRoutes(generateTree(items))
+    // this.SET_ROUTES(dynamicRoutes)
 
     // 取消注释用来启用前端动态路由配置
-    // const accessedRoutes = filterAsyncRoutes(asyncRoutes, this.authorizedPermissions)
-    // this.SET_ROUTES(accessedRoutes)
+    const accessedRoutes = filterAsyncRoutes(asyncRoutes, this.authorizedPermissions)
+    this.SET_ROUTES(accessedRoutes)
   }
 
   @Action ResetPermissions() {
