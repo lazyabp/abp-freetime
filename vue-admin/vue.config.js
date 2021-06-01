@@ -4,7 +4,7 @@ const path = require('path')
 // If your port is set to 80,
 // use administrator privileges to execute the command line.
 // For example, on Mac: sudo npm run / sudo yarn
-const devServerPort = 9527 // TODO: get this variable from setting.ts
+const devServerPort = 8080 // TODO: get this variable from setting.ts
 const name = 'Vue Typescript Admin' // TODO: get this variable from setting.ts
 
 module.exports = {
@@ -24,7 +24,7 @@ module.exports = {
       // detail: https://cli.vuejs.org/config/#devserver-proxy
       [process.env.VUE_APP_BASE_IDENTITY_SERVER]: {
         // IdentityServer4 address
-        target: 'https://localhost:44365',
+        target: 'https://localhost:44369',
         changeOrigin: true,
         pathRewrite: {
           ['^' + process.env.VUE_APP_BASE_IDENTITY_SERVER]: ''
@@ -32,7 +32,7 @@ module.exports = {
       },
       [process.env.VUE_APP_SIGNALR_SERVER]: {
         // api gateway address websocket protocol
-        target: 'ws://localhost:44365',
+        target: 'ws://localhost:44369',
         changeOrigin: true,
         pathRewrite: {
           ['^' + process.env.VUE_APP_SIGNALR_SERVER]: ''
@@ -41,7 +41,7 @@ module.exports = {
       },
       [process.env.VUE_APP_BASE_API]: {
         // api gateway address
-        target: 'https://localhost:44365',
+        target: 'https://localhost:44369',
         changeOrigin: true,
         pathRewrite: {
           ['^' + process.env.VUE_APP_BASE_API]: ''

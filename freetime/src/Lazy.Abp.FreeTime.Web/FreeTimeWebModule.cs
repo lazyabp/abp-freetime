@@ -45,6 +45,8 @@ namespace Lazy.Abp.FreeTime.Web
         )]
     public class FreeTimeWebModule : AbpModule
     {
+        private const string DefaultCorsPolicyName = "Default";
+
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
             context.Services.PreConfigure<AbpMvcDataAnnotationsLocalizationOptions>(options =>
@@ -74,6 +76,8 @@ namespace Lazy.Abp.FreeTime.Web
             ConfigureNavigationServices();
             ConfigureAutoApiControllers();
             ConfigureSwaggerServices(context.Services);
+            ConfigureCorsPolicy(context, configuration);
+            ConfigureAuditing(configuration);
         }
 
         private void ConfigureUrls(IConfiguration configuration)
@@ -169,6 +173,44 @@ namespace Lazy.Abp.FreeTime.Web
             );
         }
 
+        private void ConfigureCorsPolicy(ServiceConfigurationContext context, IConfiguration configuration)
+        {
+            context.Services.AddCors(options =>
+            {
+                options.AddPolicy(DefaultCorsPolicyName, builder =>
+                {
+                    builder
+                        .WithOrigins(
+                            configuration["App:CorsOrigins"]
+                                .Split(",", StringSplitOptions.RemoveEmptyEntries)
+                                .Select(o => o.RemovePostFix("/"))
+                                .ToArray()
+                        )
+                        .WithAbpExposedHeaders()
+                        .SetIsOriginAllowedToAllowWildcardSubdomains()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowCredentials();
+                });
+            });
+        }
+
+        private void ConfigureAuditing(IConfiguration configuration)
+        {
+            Configure<AbpAuditingOptions>(options =>
+            {
+                options.ApplicationName = "FreeTime";
+                // 是否启用实体变更记录
+                var entitiesChangedConfig = configuration.GetSection("App:TrackingEntitiesChanged");
+                if (entitiesChangedConfig.Exists() && entitiesChangedConfig.Get<bool>())
+                {
+                    options
+                    .EntityHistorySelectors
+                    .AddAllEntities();
+                }
+            });
+        }
+
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
             var app = context.GetApplicationBuilder();
@@ -189,6 +231,8 @@ namespace Lazy.Abp.FreeTime.Web
             app.UseCorrelationId();
             app.UseStaticFiles();
             app.UseRouting();
+            // 跨域
+            app.UseCors(DefaultCorsPolicyName);
             app.UseAuthentication();
             app.UseJwtTokenMiddleware();
 
