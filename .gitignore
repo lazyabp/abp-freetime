@@ -1,0 +1,34 @@
+.DS_Store
+node_modules
+/dist
+.env.production
+task
+obj
+bin
+Logs
+tempkey.jwk
+.vs
+
+/tests/e2e/videos/
+/tests/e2e/screenshots/
+/tests/**/coverage/
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+.history
+.ionide
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*

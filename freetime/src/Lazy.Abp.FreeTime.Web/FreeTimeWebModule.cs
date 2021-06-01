@@ -35,6 +35,7 @@ namespace Lazy.Abp.FreeTime.Web
         typeof(FreeTimeHttpApiModule),
         typeof(FreeTimeApplicationModule),
         typeof(FreeTimeEntityFrameworkCoreDbMigrationsModule),
+        typeof(LazyAbpNotificationsSignalRModule),
         typeof(AbpAutofacModule),
         typeof(AbpAccountWebIdentityServerModule),
         typeof(AbpAspNetCoreMvcUiBasicThemeModule),

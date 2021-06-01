@@ -37,6 +37,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\lazyabp\src\Lazy.Abp.Notifications.SignalR\Lazy.Abp.Notifications.SignalR.csproj" />
     <ProjectReference Include="..\Lazy.Abp.FreeTime.Application\Lazy.Abp.FreeTime.Application.csproj" />
     <ProjectReference Include="..\Lazy.Abp.FreeTime.HttpApi\Lazy.Abp.FreeTime.HttpApi.csproj" />
     <ProjectReference Include="..\Lazy.Abp.FreeTime.EntityFrameworkCore.DbMigrations\Lazy.Abp.FreeTime.EntityFrameworkCore.DbMigrations.csproj" />
