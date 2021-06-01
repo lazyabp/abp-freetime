@@ -1,5 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Lazy.Abp.Notifications;
+using Lazy.Abp.Subscriptions;
+using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
+using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.FeatureManagement.EntityFrameworkCore;
 using Volo.Abp.Identity.EntityFrameworkCore;
@@ -14,6 +17,7 @@ namespace Lazy.Abp.EntityFrameworkCore
     [DependsOn(
         typeof(LazyAbpDomainModule),
         typeof(AbpAuditLoggingEntityFrameworkCoreModule),
+        typeof(AbpBackgroundJobsEntityFrameworkCoreModule),
         typeof(AbpEntityFrameworkCoreModule),
         typeof(AbpIdentityEntityFrameworkCoreModule),
         typeof(AbpIdentityServerEntityFrameworkCoreModule),
@@ -31,6 +35,11 @@ namespace Lazy.Abp.EntityFrameworkCore
                 /* Add custom repositories here. Example:
                  * options.AddRepository<Question, EfCoreQuestionRepository>();
                  */
+                options.AddRepository<Notification, EfCoreNotificationRepository>();
+                options.AddRepository<UserNotification, EfCoreUserNotificationRepository>();
+                options.AddRepository<UserSubscribe, EfCoreUserSubscribeRepository>();
+
+                options.AddDefaultRepositories(includeAllEntities: true);
             });
         }
     }

@@ -1,6 +1,9 @@
 ﻿using System;
+using Lazy.Abp.Notifications;
+using Lazy.Abp.Subscriptions;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 
 namespace Lazy.Abp.EntityFrameworkCore
 {
@@ -19,25 +22,45 @@ namespace Lazy.Abp.EntityFrameworkCore
 
             optionsAction?.Invoke(options);
 
-            /* Configure all entities here. Example:
-
-            builder.Entity<Question>(b =>
+            builder.Entity<Notification>(b =>
             {
-                //Configure table & schema name
-                b.ToTable(options.TablePrefix + "Questions", options.Schema);
-            
-                b.ConfigureByConvention();
-            
-                //Properties
-                b.Property(q => q.Title).IsRequired().HasMaxLength(QuestionConsts.MaxTitleLength);
-                
-                //Relations
-                b.HasMany(question => question.Tags).WithOne().HasForeignKey(qt => qt.QuestionId);
+                b.ToTable(options.TablePrefix + "Notifications", options.Schema);
 
-                //Indexes
-                b.HasIndex(q => q.CreationTime);
+                b.Property(p => p.NotificationName).HasMaxLength(NotificationConsts.MaxNameLength).IsRequired();
+                b.Property(p => p.NotificationTypeName).HasMaxLength(NotificationConsts.MaxTypeNameLength).IsRequired();
+                b.Property(p => p.NotificationData).HasMaxLength(NotificationConsts.MaxDataLength).IsRequired();
+
+                b.ConfigureByConvention();
+
+                b.HasIndex(p => new { p.TenantId, p.NotificationName });
             });
-            */
+
+            builder.Entity<UserNotification>(b =>
+            {
+                b.ToTable(options.TablePrefix + "UserNotifications", options.Schema);
+
+                b.ConfigureByConvention();
+
+                b.HasIndex(p => new { p.TenantId, p.UserId, p.NotificationId })
+                .HasDatabaseName("IX_Tenant_User_Notification_Id");
+            });
+
+            builder.Entity<UserSubscribe>(b =>
+            {
+                b.ToTable(options.TablePrefix + "UserSubscribes", options.Schema);
+
+                b.Property(p => p.NotificationName).HasMaxLength(SubscribeConsts.MaxNotificationNameLength).IsRequired();
+                b.Property(p => p.UserName)
+                    .HasMaxLength(SubscribeConsts.MaxUserNameLength)
+                    .HasDefaultValue("/")// 不是必须的
+                    .IsRequired();
+
+                b.ConfigureByConvention();
+
+                b.HasIndex(p => new { p.TenantId, p.UserId, p.NotificationName })
+                .HasDatabaseName("IX_Tenant_User_Notification_Name")
+                .IsUnique();
+            });
         }
     }
 }

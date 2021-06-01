@@ -134,7 +134,6 @@
     "Assigned": "可分配的",
     "Available": "已拥有的",
     "Expiration": "过期时间",
-    "CreationTime": "创建时间",
     "Scope:New": "添加新作用域",
     "Scope:Delete": "删除作用域",
     "Secret:New": "添加新密钥",
@@ -264,6 +263,15 @@
     "DisplayName:FileManagement": "文件管理",
     "Description:FileManagement": "文件管理",
     "DisplayName:FileManagement.FileSystem": "文件系统",
-    "Description:FileManagement.FileSystem": "文件系统"
+    "Description:FileManagement.FileSystem": "文件系统",
+    "Permission:MessageService": "消息服务",
+    "Permission:Notification": "通知管理",
+    "Permission:Delete": "删除",
+    "Permission:Hangfire": "Hangfire仪表板",
+    "Permission:ManageQueue": "管理队列",
+    "Notifications:MultiTenancy": "租户通知",
+    "Notifications:Users": "用户通知",
+    "Notifications:NewTenantRegisterd": "租户创建通知",
+    "Notifications:WelcomeToApplication": "用户欢迎通知"
   }
 }

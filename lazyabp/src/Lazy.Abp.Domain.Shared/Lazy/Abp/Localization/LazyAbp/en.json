@@ -134,7 +134,6 @@
     "Assigned": "Assigned",
     "Available": "Available",
     "Expiration": "Expiration",
-    "CreationTime": "Creation Time",
     "Scope:New": "Add New",
     "Scope:Delete": "Delete",
     "Secret:New": "Add New",
@@ -264,6 +263,15 @@
     "DisplayName:FileManagement": "File Management",
     "Description:FileManagement": "File Management",
     "DisplayName:FileManagement.FileSystem": "File System",
-    "Description:FileManagement.FileSystem": "File System"
+    "Description:FileManagement.FileSystem": "File System",
+    "Permission:MessageService": "Message service",
+    "Permission:Notification": "Notification",
+    "Permission:Delete": "Delete",
+    "Permission:Hangfire": "Hangfire dashboard",
+    "Permission:ManageQueue": "Manage queue",
+    "Notifications:MultiTenancy": "Multi Tenancy",
+    "Notifications:Users": "Users",
+    "Notifications:NewTenantRegisterd": "Tenant creation notification",
+    "Notifications:WelcomeToApplication": "User Welcome Notice"
   }
 }

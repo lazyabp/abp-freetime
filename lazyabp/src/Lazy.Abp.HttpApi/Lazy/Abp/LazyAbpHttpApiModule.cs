@@ -8,12 +8,14 @@ using Volo.Abp.Identity;
 using Volo.Abp.PermissionManagement.HttpApi;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.FeatureManagement;
+using Volo.Abp.Account;
 
 namespace Lazy.Abp
 {
     [DependsOn(
         typeof(LazyAbpApplicationContractsModule),
         typeof(AbpAspNetCoreMvcModule),
+        typeof(AbpAccountHttpApiModule),
         typeof(AbpIdentityHttpApiModule),
         typeof(AbpPermissionManagementHttpApiModule),
         typeof(AbpTenantManagementHttpApiModule),

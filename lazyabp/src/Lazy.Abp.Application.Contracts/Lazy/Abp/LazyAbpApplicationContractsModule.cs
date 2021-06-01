@@ -7,6 +7,7 @@ using Volo.Abp.PermissionManagement;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.SettingManagement;
+using Volo.Abp.ObjectExtending;
 
 namespace Lazy.Abp
 {
@@ -19,7 +20,8 @@ namespace Lazy.Abp
         typeof(AbpSettingManagementApplicationContractsModule),
         typeof(AbpPermissionManagementApplicationContractsModule),
         typeof(AbpTenantManagementApplicationContractsModule),
-        typeof(AbpFeatureManagementApplicationContractsModule)
+        typeof(AbpFeatureManagementApplicationContractsModule),
+        typeof(AbpObjectExtendingModule)
         )]
     public class LazyAbpApplicationContractsModule : AbpModule
     {

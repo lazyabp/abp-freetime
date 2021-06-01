@@ -64,7 +64,8 @@ namespace Lazy.Abp
 
             // CreateMap<ApiSecret, ApiResourceSecretDto>();
             CreateMap<ApiScopeClaim, ApiScopeClaimDto>();
-            CreateMap<ApiScopeProperty, ApiScopePropertyDto>();
+            CreateMap<ApiScopeProperty, ApiScopePropertyDto>()
+                .ForMember(q => q.Id, op => op.MapFrom(x => x.ApiScopeId));
             CreateMap<ApiScope, ApiScopeDto>();
 
             CreateMap<ApiResourceProperty, ApiResourcePropertyDto>();

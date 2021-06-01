@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Lazy.Abp.FreeTime</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\lazyabp\src\Lazy.Abp.Application\Lazy.Abp.Application.csproj" />
+    <ProjectReference Include="..\Lazy.Abp.FreeTime.Domain\Lazy.Abp.FreeTime.Domain.csproj" />
+    <ProjectReference Include="..\Lazy.Abp.FreeTime.Application.Contracts\Lazy.Abp.FreeTime.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
