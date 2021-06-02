@@ -10,7 +10,7 @@ namespace Lazy.Abp.Identity
 {
     [RemoteService(Name = IdentityRemoteServiceConsts.RemoteServiceName)]
     [Area("identity")]
-    [ControllerName("organization-units")]
+    [ControllerName("OrganizationUnits")]
     [Route("api/identity/organization-units")]
     public class OrganizationUnitController : AbpController, IOrganizationUnitAppService
     {

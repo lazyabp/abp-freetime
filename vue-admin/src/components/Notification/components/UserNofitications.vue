@@ -64,7 +64,7 @@ export default class extends mixins(EventBusMiXin) {
   private getMyNotifierFilter = new UserNotificationGetByPaged()
 
   mounted() {
-    // this.handleStartConnection()
+    this.handleStartConnection()
   }
 
   destroyed() {

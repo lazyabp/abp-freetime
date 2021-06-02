@@ -8,6 +8,7 @@ using Volo.Abp.Identity;
 using Volo.Abp.PermissionManagement.HttpApi;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Account;
+using Volo.Abp.TenantManagement;
 
 namespace Lazy.Abp
 {

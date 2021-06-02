@@ -1,5 +1,6 @@
 import { ListResultDto, PagedResultDto, PagedAndSortedResultRequestDto, FullAuditedEntityDto } from './types'
 import ApiService from './serviceBase'
+import { urlStringify } from '@/utils'
 
 const serviceUrl = process.env.VUE_APP_BASE_API
 
@@ -23,12 +24,8 @@ export default class TenantService {
   }
 
   public static getTenants(payload: TenantGetByPaged) {
-    let _url = '/api/tenant-management/tenants'
-    _url += '?filter=' + payload.filter
-    _url += '&sorting=' + payload.sorting
-    // 因为abp设计的原因, 需要前端组合页面
-    _url += '&skipCount=' + payload.skipCount
-    _url += '&maxResultCount=' + payload.maxResultCount
+    let _url = '/api/tenant-management/tenants?'
+    _url += urlStringify(payload)
     return ApiService.Get<PagedResultDto<TenantDto>>(_url, serviceUrl)
   }
 

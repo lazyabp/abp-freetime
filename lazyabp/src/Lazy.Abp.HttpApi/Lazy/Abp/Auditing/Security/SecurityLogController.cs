@@ -9,7 +9,7 @@ namespace Lazy.Abp.Auditing.Security
 {
     [RemoteService(Name = AuditingRemoteServiceConsts.RemoteServiceName)]
     [Area("auditing")]
-    [ControllerName("security-log")]
+    [ControllerName("SsecurityLog")]
     [Route("api/auditing/security-log")]
     public class SecurityLogController : AbpController, ISecurityLogAppService
     {

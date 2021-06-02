@@ -9,7 +9,7 @@ namespace Lazy.Abp.Auditing.Logging
 {
     [RemoteService(Name = AuditingRemoteServiceConsts.RemoteServiceName)]
     [Area("auditing")]
-    [ControllerName("audit-log")]
+    [ControllerName("AuditLog")]
     [Route("api/auditing/audit-log")]
     public class AuditLogController : AbpController, IAuditLogAppService
     {

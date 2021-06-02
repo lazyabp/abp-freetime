@@ -236,6 +236,9 @@ namespace Lazy.Abp.FreeTime.Web
             app.UseRouting();
             // 跨域
             app.UseCors(DefaultCorsPolicyName);
+            // 加入自定义中间件
+            app.UseSignalRJwtToken();
+
             app.UseAuthentication();
             app.UseJwtTokenMiddleware();
 
