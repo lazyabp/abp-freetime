@@ -23,11 +23,11 @@
         >
           <el-tab-pane
             name="basics"
-            :label="$t('AbpIdentityServer.Basics')"
+            :label="$t('LazyAbp.Basics')"
           >
             <el-form-item
               prop="enabled"
-              :label="$t('AbpIdentityServer.Resource:Enabled')"
+              :label="$t('LazyAbp.Resource:Enabled')"
             >
               <el-switch
                 v-model="apiResource.enabled"
@@ -35,7 +35,7 @@
             </el-form-item>
             <el-form-item
               prop="showInDiscoveryDocument"
-              :label="$t('AbpIdentityServer.ShowInDiscoveryDocument')"
+              :label="$t('LazyAbp.ShowInDiscoveryDocument')"
             >
               <el-switch
                 v-model="apiResource.showInDiscoveryDocument"
@@ -43,22 +43,22 @@
             </el-form-item>
             <el-form-item
               prop="name"
-              :label="$t('AbpIdentityServer.Name')"
+              :label="$t('LazyAbp.Name')"
               :rules="{
                 required: true,
-                message: $t('pleaseInputBy', {key: $t('AbpIdentityServer.Name')}),
+                message: $t('pleaseInputBy', {key: $t('LazyAbp.Name')}),
                 trigger: 'blur'
               }"
             >
               <el-input
                 v-model="apiResource.name"
                 :readonly="isEdit"
-                :placeholder="$t('pleaseInputBy', {key: $t('AbpIdentityServer.Name')})"
+                :placeholder="$t('pleaseInputBy', {key: $t('LazyAbp.Name')})"
               />
             </el-form-item>
             <el-form-item
               prop="displayName"
-              :label="$t('AbpIdentityServer.DisplayName')"
+              :label="$t('LazyAbp.DisplayName')"
             >
               <el-input
                 v-model="apiResource.displayName"
@@ -66,7 +66,7 @@
             </el-form-item>
             <el-form-item
               prop="description"
-              :label="$t('AbpIdentityServer.Description')"
+              :label="$t('LazyAbp.Description')"
             >
               <el-input
                 v-model="apiResource.description"
@@ -74,14 +74,14 @@
             </el-form-item>
             <el-form-item
               prop="allowedAccessTokenSigningAlgorithms"
-              :label="$t('AbpIdentityServer.AllowedAccessTokenSigningAlgorithms')"
+              :label="$t('LazyAbp.AllowedAccessTokenSigningAlgorithms')"
             >
               <el-input
                 v-model="apiResource.allowedAccessTokenSigningAlgorithms"
               />
             </el-form-item>
           </el-tab-pane>
-          <el-tab-pane :label="$t('AbpIdentityServer.Scope')">
+          <el-tab-pane :label="$t('LazyAbp.Scope')">
             <scope-edit-form
               v-model="apiResource.scopes"
               :scopes="apiScopes"
@@ -89,7 +89,7 @@
           </el-tab-pane>
           <el-tab-pane
             name="userClaim"
-            :label="$t('AbpIdentityServer.UserClaim')"
+            :label="$t('LazyAbp.UserClaim')"
           >
             <user-claim-edit-form
               v-model="apiResource.userClaims"
@@ -104,7 +104,7 @@
               @command="onDropdownMenuItemChanged"
             >
               <span class="el-dropdown-link">
-                {{ $t('AbpIdentityServer.Advanced') }}<i class="el-icon-arrow-down el-icon--right" />
+                {{ $t('LazyAbp.Advanced') }}<i class="el-icon-arrow-down el-icon--right" />
               </span>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item
@@ -113,7 +113,7 @@
                     prop: 'secrets'
                   }"
                 >
-                  {{ $t('AbpIdentityServer.Secret') }}
+                  {{ $t('LazyAbp.Secret') }}
                 </el-dropdown-item>
                 <el-dropdown-item
                   :command="{
@@ -121,7 +121,7 @@
                     prop: 'properties'
                   }"
                 >
-                  {{ $t('AbpIdentityServer.Propertites') }}
+                  {{ $t('LazyAbp.Propertites') }}
                 </el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
@@ -142,7 +142,7 @@
             type="info"
             @click="onCancel"
           >
-            {{ $t('AbpIdentityServer.Cancel') }}
+            {{ $t('LazyAbp.Cancel') }}
           </el-button>
           <el-button
             class="confirm"
@@ -150,7 +150,7 @@
             icon="el-icon-check"
             @click="onSave"
           >
-            {{ $t('AbpIdentityServer.Save') }}
+            {{ $t('LazyAbp.Save') }}
           </el-button>
         </el-form-item>
       </el-form>
@@ -224,9 +224,9 @@ export default class extends Mixins(LocalizationMiXin) {
 
   get title() {
     if (this.isEdit) {
-      return this.$t('AbpIdentityServer.Resource:Name', { 0: this.apiResource.displayName || this.apiResource.name })
+      return this.$t('LazyAbp.Resource:Name', { 0: this.apiResource.displayName || this.apiResource.name })
     }
-    return this.$t('AbpIdentityServer.Resource:New')
+    return this.$t('LazyAbp.Resource:New')
   }
 
   @Watch('showDialog', { immediate: true })

@@ -17,7 +17,7 @@
         type="primary"
         @click="refreshPagedData"
       >
-        {{ $t('AbpIdentityServer.Search') }}
+        {{ $t('LazyAbp.Search') }}
       </el-button>
       <el-button
         class="filter-item"
@@ -25,7 +25,7 @@
         :disabled="!checkPermission(['AbpIdentityServer.ApiResources.Create'])"
         @click="onShowEditForm('')"
       >
-        {{ $t('AbpIdentityServer.Resource:New') }}
+        {{ $t('LazyAbp.Resource:New') }}
       </el-button>
     </div>
 
@@ -40,7 +40,7 @@
       @sort-change="handleSortChange"
     >
       <el-table-column
-        :label="$t('AbpIdentityServer.Name')"
+        :label="$t('LazyAbp.Name')"
         prop="name"
         sortable
         width="150px"
@@ -51,7 +51,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.DisplayName')"
+        :label="$t('LazyAbp.DisplayName')"
         prop="displayName"
         sortable
         width="200px"
@@ -62,7 +62,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Required')"
+        :label="$t('LazyAbp.Required')"
         prop="enabled"
         sortable
         width="140px"
@@ -76,7 +76,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.ShowInDiscoveryDocument')"
+        :label="$t('LazyAbp.ShowInDiscoveryDocument')"
         prop="showInDiscoveryDocument"
         sortable
         width="140px"
@@ -90,7 +90,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Description')"
+        :label="$t('LazyAbp.Description')"
         prop="description"
         sortable
         width="200px"
@@ -101,7 +101,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.AllowedAccessTokenSigningAlgorithms')"
+        :label="$t('LazyAbp.AllowedAccessTokenSigningAlgorithms')"
         prop="allowedAccessTokenSigningAlgorithms"
         sortable
         width="200px"
@@ -123,7 +123,7 @@
             type="primary"
             @click="onShowEditForm(row.id)"
           >
-            {{ $t('AbpIdentityServer.Resource:Edit') }}
+            {{ $t('LazyAbp.Resource:Edit') }}
           </el-button>
           <el-button
             :disabled="!checkPermission(['AbpIdentityServer.ApiResources.Delete'])"
@@ -131,7 +131,7 @@
             type="danger"
             @click="onDelete(row.id, row.name)"
           >
-            {{ $t('AbpIdentityServer.Resource:Delete') }}
+            {{ $t('LazyAbp.Resource:Delete') }}
           </el-button>
         </template>
       </el-table-column>

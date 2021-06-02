@@ -3,7 +3,7 @@
     :value="rightClaims"
     class="transfer-scope"
     :data="userClaimTypes"
-    :titles="[$t('AbpIdentityServer.Assigned'), $t('AbpIdentityServer.Available')]"
+    :titles="[$t('LazyAbp.Assigned'), $t('LazyAbp.Available')]"
     :props="{
       key: 'type',
       label: 'value'

@@ -17,7 +17,7 @@
         type="primary"
         @click="refreshPagedData"
       >
-        {{ $t('AbpIdentityServer.Search') }}
+        {{ $t('LazyAbp.Search') }}
       </el-button>
     </div>
 
@@ -32,7 +32,7 @@
       @sort-change="handleSortChange"
     >
       <el-table-column
-        :label="$t('AbpIdentityServer.Client:Id')"
+        :label="$t('LazyAbp.Client:Id')"
         prop="clientId"
         sortable
         width="180px"
@@ -42,7 +42,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Grants:Key')"
+        :label="$t('LazyAbp.Grants:Key')"
         prop="key"
         sortable
         width="300px"
@@ -52,7 +52,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Grants:Type')"
+        :label="$t('LazyAbp.Grants:Type')"
         prop="type"
         sortable
         width="150px"
@@ -62,7 +62,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Grants:SessionId')"
+        :label="$t('LazyAbp.Grants:SessionId')"
         prop="sessionId"
         sortable
         width="180px"
@@ -72,7 +72,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Description')"
+        :label="$t('LazyAbp.Description')"
         prop="description"
         sortable
         width="200px"

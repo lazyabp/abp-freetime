@@ -8,30 +8,30 @@
     >
       <el-form-item
         prop="key"
-        :label="$t('AbpIdentityServer.Propertites:Key')"
+        :label="$t('LazyAbp.Propertites:Key')"
         :rules="{
           required: true,
-          message: $t('pleaseInputBy', {key: $t('AbpIdentityServer.Propertites:Key')}),
+          message: $t('pleaseInputBy', {key: $t('LazyAbp.Propertites:Key')}),
           trigger: 'blur'
         }"
       >
         <el-input
           v-model="newProp.key"
-          :placeholder="$t('pleaseInputBy', {key: $t('AbpIdentityServer.Propertites:Key')})"
+          :placeholder="$t('pleaseInputBy', {key: $t('LazyAbp.Propertites:Key')})"
         />
       </el-form-item>
       <el-form-item
         prop="value"
-        :label="$t('AbpIdentityServer.Propertites:Value')"
+        :label="$t('LazyAbp.Propertites:Value')"
         :rules="{
           required: true,
-          message: $t('pleaseInputBy', {key: $t('AbpIdentityServer.Propertites:Value')}),
+          message: $t('pleaseInputBy', {key: $t('LazyAbp.Propertites:Value')}),
           trigger: 'blur'
         }"
       >
         <el-input
           v-model="newProp.value"
-          :placeholder="$t('pleaseInputBy', {key: $t('AbpIdentityServer.Propertites:Value')})"
+          :placeholder="$t('pleaseInputBy', {key: $t('LazyAbp.Propertites:Value')})"
         />
       </el-form-item>
 
@@ -42,7 +42,7 @@
           @click="onSave"
         >
           <i class="ivu-icon ivu-icon-md-add" />
-          {{ $t('AbpIdentityServer.AddNew') }}
+          {{ $t('LazyAbp.AddNew') }}
         </el-button>
       </el-form-item>
     </el-form>
@@ -56,7 +56,7 @@
       style="width: 100%;"
     >
       <el-table-column
-        :label="$t('AbpIdentityServer.Propertites:Key')"
+        :label="$t('LazyAbp.Propertites:Key')"
         prop="key"
         sortable
         width="200px"
@@ -67,7 +67,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Propertites:Value')"
+        :label="$t('LazyAbp.Propertites:Value')"
         prop="value"
         sortable
         min-width="300px"
@@ -78,7 +78,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Actions')"
+        :label="$t('LazyAbp.Actions')"
         align="center"
         min-width="80px"
       >

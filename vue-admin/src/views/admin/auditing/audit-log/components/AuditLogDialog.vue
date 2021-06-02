@@ -1,7 +1,7 @@
 <template>
   <el-dialog
     :visible="showDialog"
-    :title="$t('AbpAuditLogging.AuditLog')"
+    :title="$t('LazyAbp.AuditLog')"
     width="800px"
     custom-class="modal-form"
     :close-on-click-modal="true"

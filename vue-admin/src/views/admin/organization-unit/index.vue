@@ -13,7 +13,7 @@
           <div
             slot="header"
           >
-            <span>{{ $t('AbpIdentity.OrganizationUnit:Members') }}</span>
+            <span>{{ $t('LazyAbp.OrganizationUnit:Members') }}</span>
           </div>
           <div>
             <el-tabs>

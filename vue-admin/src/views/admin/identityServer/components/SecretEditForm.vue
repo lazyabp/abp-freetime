@@ -8,17 +8,17 @@
     >
       <el-form-item
         prop="type"
-        :label="$t('AbpIdentityServer.Secret:Type')"
+        :label="$t('LazyAbp.Secret:Type')"
         :rules="{
           required: true,
-          message: $t('pleaseSelectBy', {key: $t('AbpIdentityServer.Secret:Type')}),
+          message: $t('pleaseSelectBy', {key: $t('LazyAbp.Secret:Type')}),
           trigger: 'blur'
         }"
       >
         <el-select
           v-model="secret.type"
           class="full-select"
-          :placeholder="$t('pleaseSelectBy', {key: $t('AbpIdentityServer.Secret:Type')})"
+          :placeholder="$t('pleaseSelectBy', {key: $t('LazyAbp.Secret:Type')})"
         >
           <el-option
             key="JWK"
@@ -49,21 +49,21 @@
       </el-form-item>
       <el-form-item
         prop="value"
-        :label="$t('AbpIdentityServer.Secret:Value')"
+        :label="$t('LazyAbp.Secret:Value')"
         :rules="{
           required: true,
-          message: $t('pleaseInputBy', {key: $t('AbpIdentityServer.Secret:Value')}),
+          message: $t('pleaseInputBy', {key: $t('LazyAbp.Secret:Value')}),
           trigger: 'blur'
         }"
       >
         <el-input
           v-model="secret.value"
-          :placeholder="$t('pleaseInputBy', {key: $t('AbpIdentityServer.Secret:Value')})"
+          :placeholder="$t('pleaseInputBy', {key: $t('LazyAbp.Secret:Value')})"
         />
       </el-form-item>
       <el-form-item
         prop="description"
-        :label="$t('AbpIdentityServer.Description')"
+        :label="$t('LazyAbp.Description')"
       >
         <el-input
           v-model="secret.description"
@@ -71,7 +71,7 @@
       </el-form-item>
       <el-form-item
         prop="expiration"
-        :label="$t('AbpIdentityServer.Expiration')"
+        :label="$t('LazyAbp.Expiration')"
       >
         <el-date-picker
           v-model="secret.expiration"
@@ -87,7 +87,7 @@
           @click="onSave"
         >
           <i class="ivu-icon ivu-icon-md-add" />
-          {{ $t('AbpIdentityServer.AddNew') }}
+          {{ $t('LazyAbp.AddNew') }}
         </el-button>
       </el-form-item>
     </el-form>
@@ -100,7 +100,7 @@
       style="width: 100%;"
     >
       <el-table-column
-        :label="$t('AbpIdentityServer.Secret:Type')"
+        :label="$t('LazyAbp.Secret:Type')"
         prop="type"
         sortable
         width="170px"
@@ -111,7 +111,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Secret:Value')"
+        :label="$t('LazyAbp.Secret:Value')"
         prop="value"
         sortable
         width="200px"
@@ -122,7 +122,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Description')"
+        :label="$t('LazyAbp.Description')"
         prop="description"
         width="120px"
         align="center"
@@ -132,7 +132,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Expiration')"
+        :label="$t('LazyAbp.Expiration')"
         prop="expiration"
         width="170px"
         align="center"
@@ -142,7 +142,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Actions')"
+        :label="$t('LazyAbp.Actions')"
         align="center"
         width="80px"
         fixed="right"

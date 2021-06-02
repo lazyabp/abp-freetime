@@ -8,7 +8,7 @@
         v-model="client.alwaysSendClientClaims"
         class="label-title"
       >
-        {{ $t('AbpIdentityServer.Client:AlwaysSendClientClaims') }}
+        {{ $t('LazyAbp.Client:AlwaysSendClientClaims') }}
       </el-checkbox>
     </el-form-item>
     <el-form-item
@@ -19,7 +19,7 @@
         v-model="client.alwaysIncludeUserClaimsInIdToken"
         class="label-title"
       >
-        {{ $t('AbpIdentityServer.Client:AlwaysIncludeUserClaimsInIdToken') }}
+        {{ $t('LazyAbp.Client:AlwaysIncludeUserClaimsInIdToken') }}
       </el-checkbox>
     </el-form-item>
     <el-form
@@ -30,17 +30,17 @@
     >
       <el-form-item
         prop="type"
-        :label="$t('AbpIdentityServer.Claims:Type')"
+        :label="$t('LazyAbp.Claims:Type')"
         :rules="{
           required: true,
-          message: $t('pleaseInputBy', {key: $t('AbpIdentityServer.Claims:Type')}),
+          message: $t('pleaseInputBy', {key: $t('LazyAbp.Claims:Type')}),
           trigger: 'blur'
         }"
       >
         <el-select
           v-model="clientClaim.type"
           style="width: 100%"
-          :placeholder="$t('pleaseSelectBy', {key: $t('AbpIdentityServer.Claims:Type')})"
+          :placeholder="$t('pleaseSelectBy', {key: $t('LazyAbp.Claims:Type')})"
           @change="onClaimTypeChanged"
         >
           <el-option
@@ -53,10 +53,10 @@
       </el-form-item>
       <el-form-item
         prop="value"
-        :label="$t('AbpIdentityServer.Claims:Value')"
+        :label="$t('LazyAbp.Claims:Value')"
         :rules="{
           required: true,
-          message: $t('pleaseInputBy', {key: $t('AbpIdentityServer.Claims:Value')}),
+          message: $t('pleaseInputBy', {key: $t('LazyAbp.Claims:Value')}),
           trigger: 'blur'
         }"
       >
@@ -64,25 +64,25 @@
           v-if="hasStringValueType(clientClaim.type)"
           v-model="clientClaim.value"
           type="text"
-          :placeholder="$t('pleaseInputBy', {key: $t('AbpIdentityServer.Claims:Value')})"
+          :placeholder="$t('pleaseInputBy', {key: $t('LazyAbp.Claims:Value')})"
         />
         <el-input
           v-else-if="hasIntegerValueType(clientClaim.type)"
           v-model="clientClaim.value"
           type="number"
-          :placeholder="$t('pleaseInputBy', {key: $t('AbpIdentityServer.Claims:Value')})"
+          :placeholder="$t('pleaseInputBy', {key: $t('LazyAbp.Claims:Value')})"
         />
         <el-switch
           v-else-if="hasBooleanValueType(clientClaim.type)"
           v-model="clientClaim.value"
-          :placeholder="$t('pleaseInputBy', {key: $t('AbpIdentityServer.Claims:Value')})"
+          :placeholder="$t('pleaseInputBy', {key: $t('LazyAbp.Claims:Value')})"
         />
         <el-date-picker
           v-else-if="hasDateTimeValueType(clientClaim.type)"
           v-model="clientClaim.value"
           type="datetime"
           style="width: 100%"
-          :placeholder="$t('pleaseInputBy', {key: $t('AbpIdentityServer.Claims:Value')})"
+          :placeholder="$t('pleaseInputBy', {key: $t('LazyAbp.Claims:Value')})"
         />
       </el-form-item>
 
@@ -93,7 +93,7 @@
           @click="onSave"
         >
           <i class="ivu-icon ivu-icon-md-add" />
-          {{ $t('AbpIdentityServer.AddNew') }}
+          {{ $t('LazyAbp.AddNew') }}
         </el-button>
       </el-form-item>
     </el-form>
@@ -107,7 +107,7 @@
       style="width: 100%;"
     >
       <el-table-column
-        :label="$t('AbpIdentityServer.Claims:Type')"
+        :label="$t('LazyAbp.Claims:Type')"
         prop="type"
         sortable
         width="150px"
@@ -118,7 +118,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Claims:Value')"
+        :label="$t('LazyAbp.Claims:Value')"
         prop="value"
         sortable
         min-width="100%"
@@ -129,7 +129,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Actions')"
+        :label="$t('LazyAbp.Actions')"
         align="center"
         width="150px"
       >
@@ -140,7 +140,7 @@
             type="danger"
             @click="onDeleted(row.type, row.value)"
           >
-            {{ $t('AbpIdentityServer.Claims:Delete') }}
+            {{ $t('LazyAbp.Claims:Delete') }}
           </el-button>
         </template>
       </el-table-column>

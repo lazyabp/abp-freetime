@@ -30,7 +30,7 @@
           @click="onSave"
         >
           <i class="ivu-icon ivu-icon-md-add" />
-          {{ $t('AbpIdentityServer.AddNew') }}
+          {{ $t('LazyAbp.AddNew') }}
         </el-button>
       </el-form-item>
     </el-form>
@@ -53,7 +53,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Actions')"
+        :label="$t('LazyAbp.Actions')"
         align="right"
         min-width="80px"
       >

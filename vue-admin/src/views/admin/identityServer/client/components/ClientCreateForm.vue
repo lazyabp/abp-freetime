@@ -3,7 +3,7 @@
     v-el-draggable-dialog
     width="800px"
     :visible="showDialog"
-    :title="$t('AbpIdentityServer.Client:New')"
+    :title="$t('LazyAbp.Client:New')"
     custom-class="modal-form"
     :show-close="false"
     :close-on-click-modal="false"
@@ -16,45 +16,45 @@
       :model="client"
     >
       <el-tabs>
-        <el-tab-pane :label="$t('AbpIdentityServer.Basics')">
+        <el-tab-pane :label="$t('LazyAbp.Basics')">
           <el-form-item
             prop="clientId"
-            :label="$t('AbpIdentityServer.Client:Id')"
+            :label="$t('LazyAbp.Client:Id')"
             :rules="{
               required: true,
-              message: $t('pleaseInputBy', {key: $t('AbpIdentityServer.Client:Id')}),
+              message: $t('pleaseInputBy', {key: $t('LazyAbp.Client:Id')}),
               trigger: 'blur'
             }"
           >
             <el-input
               v-model="client.clientId"
-              :placeholder="$t('pleaseInputBy', {key: $t('AbpIdentityServer.Client:Id')})"
+              :placeholder="$t('pleaseInputBy', {key: $t('LazyAbp.Client:Id')})"
             />
           </el-form-item>
           <el-form-item
             prop="clientName"
-            :label="$t('AbpIdentityServer.Name')"
+            :label="$t('LazyAbp.Name')"
             :rules="{
               required: true,
-              message: $t('pleaseInputBy', {key: $t('AbpIdentityServer.Name')}),
+              message: $t('pleaseInputBy', {key: $t('LazyAbp.Name')}),
               trigger: 'blur'
             }"
           >
             <el-input
               v-model="client.clientName"
-              :placeholder="$t('pleaseInputBy', {key: $t('AbpIdentityServer.Name')})"
+              :placeholder="$t('pleaseInputBy', {key: $t('LazyAbp.Name')})"
             />
           </el-form-item>
           <el-form-item
             prop="description"
-            :label="$t('AbpIdentityServer.Description')"
+            :label="$t('LazyAbp.Description')"
           >
             <el-input
               v-model="client.description"
             />
           </el-form-item>
         </el-tab-pane>
-        <el-tab-pane :label="$t('AbpIdentityServer.Client:AllowedGrantTypes')">
+        <el-tab-pane :label="$t('LazyAbp.Client:AllowedGrantTypes')">
           <grant-type-edit-form
             v-model="client.allowedGrantTypes"
           />
@@ -66,7 +66,7 @@
           type="info"
           @click="onFormClosed(false)"
         >
-          {{ $t('AbpIdentityServer.Cancel') }}
+          {{ $t('LazyAbp.Cancel') }}
         </el-button>
         <el-button
           class="confirm"
@@ -74,7 +74,7 @@
           icon="el-icon-check"
           @click="onSave"
         >
-          {{ $t('AbpIdentityServer.Save') }}
+          {{ $t('LazyAbp.Save') }}
         </el-button>
       </el-form-item>
     </el-form>

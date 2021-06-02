@@ -3,7 +3,7 @@
     :value="rightScopes"
     class="transfer-scope"
     :data="leftScopes"
-    :titles="[$t('AbpIdentityServer.Assigned'), $t('AbpIdentityServer.Available')]"
+    :titles="[$t('LazyAbp.Assigned'), $t('LazyAbp.Available')]"
     :props="{
       key: 'scope',
       label: 'scope'

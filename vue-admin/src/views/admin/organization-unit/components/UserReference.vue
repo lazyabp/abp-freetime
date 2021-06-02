@@ -3,7 +3,7 @@
     v-el-draggable-dialog
     width="800px"
     :visible="showDialog"
-    :title="$t('AbpIdentity.OrganizationUnit:AddMember')"
+    :title="$t('LazyAbp.OrganizationUnit:AddMember')"
     custom-class="modal-form"
     :show-close="false"
     :close-on-click-modal="false"
@@ -133,7 +133,7 @@
           type="info"
           @click="onFormClosed"
         >
-          {{ $t('AbpIdentityServer.Cancel') }}
+          {{ $t('LazyAbp.Cancel') }}
         </el-button>
         <el-button
           class="confirm"
@@ -141,7 +141,7 @@
           icon="el-icon-check"
           @click="onSave"
         >
-          {{ $t('AbpIdentityServer.Save') }}
+          {{ $t('LazyAbp.Save') }}
         </el-button>
       </el-form-item>
     </el-form>

@@ -22,11 +22,11 @@
         >
           <el-tab-pane
             name="basics"
-            :label="$t('AbpIdentityServer.Basics')"
+            :label="$t('LazyAbp.Basics')"
           >
             <el-form-item
               prop="enabled"
-              :label="$t('AbpIdentityServer.Resource:Enabled')"
+              :label="$t('LazyAbp.Resource:Enabled')"
             >
               <el-switch
                 v-model="identityResource.enabled"
@@ -34,22 +34,22 @@
             </el-form-item>
             <el-form-item
               prop="name"
-              :label="$t('AbpIdentityServer.Name')"
+              :label="$t('LazyAbp.Name')"
               :rules="{
                 required: true,
-                message: $t('pleaseInputBy', {key: $t('AbpIdentityServer.Name')}),
+                message: $t('pleaseInputBy', {key: $t('LazyAbp.Name')}),
                 trigger: 'blur'
               }"
             >
               <el-input
                 v-model="identityResource.name"
                 :disabled="isEdit"
-                :placeholder="$t('pleaseInputBy', {key: $t('AbpIdentityServer.Name')})"
+                :placeholder="$t('pleaseInputBy', {key: $t('LazyAbp.Name')})"
               />
             </el-form-item>
             <el-form-item
               prop="displayName"
-              :label="$t('AbpIdentityServer.DisplayName')"
+              :label="$t('LazyAbp.DisplayName')"
             >
               <el-input
                 v-model="identityResource.displayName"
@@ -57,7 +57,7 @@
             </el-form-item>
             <el-form-item
               prop="description"
-              :label="$t('AbpIdentityServer.Description')"
+              :label="$t('LazyAbp.Description')"
             >
               <el-input
                 v-model="identityResource.description"
@@ -65,7 +65,7 @@
             </el-form-item>
             <el-form-item
               prop="required"
-              :label="$t('AbpIdentityServer.Required')"
+              :label="$t('LazyAbp.Required')"
             >
               <el-switch
                 v-model="identityResource.required"
@@ -73,7 +73,7 @@
             </el-form-item>
             <el-form-item
               prop="emphasize"
-              :label="$t('AbpIdentityServer.Emphasize')"
+              :label="$t('LazyAbp.Emphasize')"
             >
               <el-switch
                 v-model="identityResource.emphasize"
@@ -81,7 +81,7 @@
             </el-form-item>
             <el-form-item
               prop="showInDiscoveryDocument"
-              :label="$t('AbpIdentityServer.ShowInDiscoveryDocument')"
+              :label="$t('LazyAbp.ShowInDiscoveryDocument')"
             >
               <el-switch
                 v-model="identityResource.showInDiscoveryDocument"
@@ -90,7 +90,7 @@
           </el-tab-pane>
           <el-tab-pane
             name="claims"
-            :label="$t('AbpIdentityServer.UserClaim')"
+            :label="$t('LazyAbp.UserClaim')"
           >
             <user-claim-edit-form
               v-model="identityResource.userClaims"
@@ -99,7 +99,7 @@
           <el-tab-pane
             v-if="isEdit"
             name="properties"
-            :label="$t('AbpIdentityServer.Propertites')"
+            :label="$t('LazyAbp.Propertites')"
           >
             <properties-edit-form
               v-model="identityResource.properties"
@@ -115,7 +115,7 @@
             type="info"
             @click="onFormClosed(false)"
           >
-            {{ $t('AbpIdentityServer.Cancel') }}
+            {{ $t('LazyAbp.Cancel') }}
           </el-button>
           <el-button
             class="confirm"
@@ -123,7 +123,7 @@
             icon="el-icon-check"
             @click="onSave"
           >
-            {{ $t('AbpIdentityServer.Save') }}
+            {{ $t('LazyAbp.Save') }}
           </el-button>
         </el-form-item>
       </el-form>

@@ -1,7 +1,7 @@
 <template>
   <el-dialog
     width="800px"
-    :title="$t('AbpIdentityServer.DisplayName:PersistedGrants')"
+    :title="$t('LazyAbp.DisplayName:PersistedGrants')"
     :visible="showDialog"
     custom-class="modal-form"
     @close="onFormClosed"
@@ -12,7 +12,7 @@
         label-width="130px"
       >
         <el-form-item
-          :label="$t('AbpIdentityServer.Grants:Key')"
+          :label="$t('LazyAbp.Grants:Key')"
         >
           <el-input
             :value="persistedGrant.key"
@@ -20,7 +20,7 @@
           />
         </el-form-item>
         <el-form-item
-          :label="$t('AbpIdentityServer.Grants:Type')"
+          :label="$t('LazyAbp.Grants:Type')"
         >
           <el-input
             :value="persistedGrant.type"
@@ -28,7 +28,7 @@
           />
         </el-form-item>
         <el-form-item
-          :label="$t('AbpIdentityServer.Grants:SubjectId')"
+          :label="$t('LazyAbp.Grants:SubjectId')"
         >
           <el-input
             :value="persistedGrant.subjectId"
@@ -36,7 +36,7 @@
           />
         </el-form-item>
         <el-form-item
-          :label="$t('AbpIdentityServer.Grants:SessionId')"
+          :label="$t('LazyAbp.Grants:SessionId')"
         >
           <el-input
             :value="persistedGrant.sessionId"
@@ -44,7 +44,7 @@
           />
         </el-form-item>
         <el-form-item
-          :label="$t('AbpIdentityServer.Description')"
+          :label="$t('LazyAbp.Description')"
         >
           <el-input
             :value="persistedGrant.description"
@@ -52,7 +52,7 @@
           />
         </el-form-item>
         <el-form-item
-          :label="$t('AbpIdentityServer.CreationTime')"
+          :label="$t('LazyAbp.CreationTime')"
         >
           <el-input
             :value="persistedGrant.creationTime | dateTimeFilter"
@@ -60,7 +60,7 @@
           />
         </el-form-item>
         <el-form-item
-          :label="$t('AbpIdentityServer.Grants:ConsumedTime')"
+          :label="$t('LazyAbp.Grants:ConsumedTime')"
         >
           <el-input
             :value="persistedGrant.consumedTime | dateTimeFilter"
@@ -68,7 +68,7 @@
           />
         </el-form-item>
         <el-form-item
-          :label="$t('AbpIdentityServer.Expiration')"
+          :label="$t('LazyAbp.Expiration')"
         >
           <el-input
             :value="persistedGrant.expiration | dateTimeFilter"
@@ -76,7 +76,7 @@
           />
         </el-form-item>
         <el-form-item
-          :label="$t('AbpIdentityServer.Grants:Data')"
+          :label="$t('LazyAbp.Grants:Data')"
         >
           <json-editor
             :value="formatData(persistedGrant.data)"

@@ -8,7 +8,7 @@
         v-model="client.requireClientSecret"
         class="label-title"
       >
-        {{ $t('AbpIdentityServer.Client:RequiredClientSecret') }}
+        {{ $t('LazyAbp.Client:RequiredClientSecret') }}
       </el-checkbox>
     </el-form-item>
     <SecretEditForm

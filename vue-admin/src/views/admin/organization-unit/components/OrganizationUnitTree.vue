@@ -5,14 +5,14 @@
         slot="header"
         class="clearfix"
       >
-        <span>{{ $t('AbpIdentity.OrganizationUnit:Tree') }}</span>
+        <span>{{ $t('LazyAbp.OrganizationUnit:Tree') }}</span>
         <el-button
           style="float: right;"
           type="primary"
           icon="ivu-icon ivu-icon-md-add"
           @click="handleCreateRootOrganizationUnit(null)"
         >
-          {{ $t('AbpIdentity.OrganizationUnit:AddRoot') }}
+          {{ $t('LazyAbp.OrganizationUnit:AddRoot') }}
         </el-button>
       </div>
       <div>
@@ -164,11 +164,11 @@ export default class OrganizationUnitTree extends Mixins(LocalizationMiXin) {
     $contextmenu({
       items: [
         {
-          label: this.l('AbpIdentity.Edit'),
+          label: this.l('LazyAbp.Edit'),
           icon: 'el-icon-edit',
           disabled: !checkPermission(['AbpIdentity.OrganizationUnits.Update']),
           onClick: () => {
-            this.editOrganizationUnitTitle = this.l('AbpIdentity.Edit')
+            this.editOrganizationUnitTitle = this.l('LazyAbp.Edit')
             this.isEditOrganizationUnit = true
             this.editOrganizationUnitId = ou.id
             this.showOrganizationUnitDialog = true
@@ -178,7 +178,7 @@ export default class OrganizationUnitTree extends Mixins(LocalizationMiXin) {
           }
         },
         {
-          label: this.l('AbpIdentity.OrganizationUnit:AddChildren'),
+          label: this.l('LazyAbp.OrganizationUnit:AddChildren'),
           icon: 'ivu-icon ivu-icon-md-add',
           disabled: !checkPermission(['AbpIdentity.OrganizationUnits.Create']),
           onClick: () => {
@@ -186,7 +186,7 @@ export default class OrganizationUnitTree extends Mixins(LocalizationMiXin) {
           }
         },
         {
-          label: this.$t('AbpIdentity.OrganizationUnit:AddMember'),
+          label: this.$t('LazyAbp.OrganizationUnit:AddMember'),
           disabled: !checkPermission(['AbpIdentity.OrganizationUnits.ManageUsers']),
           onClick: () => {
             this.editOrganizationUnitId = ou.id
@@ -194,7 +194,7 @@ export default class OrganizationUnitTree extends Mixins(LocalizationMiXin) {
           }
         },
         {
-          label: this.$t('AbpIdentity.OrganizationUnit:AddRole'),
+          label: this.$t('LazyAbp.OrganizationUnit:AddRole'),
           disabled: !checkPermission(['AbpIdentity.OrganizationUnits.ManageRoles']),
           onClick: () => {
             this.editOrganizationUnitId = ou.id
@@ -206,8 +206,8 @@ export default class OrganizationUnitTree extends Mixins(LocalizationMiXin) {
           icon: 'el-icon-delete',
           disabled: !checkPermission(['AbpIdentity.OrganizationUnits.Delete']),
           onClick: () => {
-            this.$confirm(this.l('AbpIdentity.OrganizationUnit:WillDelete', { 0: ou.displayName }),
-              this.l('AbpIdentity.AreYouSure'), {
+            this.$confirm(this.l('LazyAbp.OrganizationUnit:WillDelete', { 0: ou.displayName }),
+              this.l('LazyAbp.AreYouSure'), {
                 callback: (action) => {
                   if (action === 'confirm') {
                     OrganizationUnitService
@@ -238,7 +238,7 @@ export default class OrganizationUnitTree extends Mixins(LocalizationMiXin) {
 
   private handleCreateRootOrganizationUnit(ou: OrganizationUnitItem) {
     const organizationUnitTree = this.$refs.organizationUnitTree as Tree
-    this.editOrganizationUnitTitle = this.l('AbpIdentity.OrganizationUnit:AddChildren')
+    this.editOrganizationUnitTitle = this.l('LazyAbp.OrganizationUnit:AddChildren')
     this.isEditOrganizationUnit = false
     if (ou) {
       this.editOrganizationUnitId = ou.id

@@ -16,10 +16,10 @@
     >
       <el-form-item
         prop="displayName"
-        :label="$t(('AbpIdentity.OrganizationUnit:DisplayName'))"
+        :label="$t('LazyAbp.OrganizationUnit:DisplayName')"
         :rules="{
           required: true,
-          message: $t('pleaseInputBy', {key: $t('AbpIdentity.OrganizationUnit:DisplayName')}),
+          message: $t('pleaseInputBy', {key: $t('LazyAbp.OrganizationUnit:DisplayName')}),
           trigger: 'blur'
         }"
       >
@@ -34,7 +34,7 @@
           type="info"
           @click="onFormClosed"
         >
-          {{ $t('AbpIdentityServer.Cancel') }}
+          {{ $t('LazyAbp.Cancel') }}
         </el-button>
         <el-button
           class="confirm"
@@ -42,7 +42,7 @@
           icon="el-icon-check"
           @click="onSave"
         >
-          {{ $t('AbpIdentityServer.Save') }}
+          {{ $t('LazyAbp.Save') }}
         </el-button>
       </el-form-item>
     </el-form>
@@ -113,7 +113,7 @@ export default class CreateOrUpdateOrganizationUnit extends Vue {
             const createOu = new OrganizationUnitCreate()
             createOu.displayName = this.organizationUnit.displayName
             if (this.organizationUnitId) {
-              createOu.parentId
+              createOu.parentId = this.organizationUnitId
             }
             
             OrganizationUnitService

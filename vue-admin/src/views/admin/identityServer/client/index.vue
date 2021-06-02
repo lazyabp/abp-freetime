@@ -17,7 +17,7 @@
         type="primary"
         @click="refreshPagedData"
       >
-        {{ $t('AbpIdentityServer.Search') }}
+        {{ $t('LazyAbp.Search') }}
       </el-button>
       <el-button
         class="filter-item"
@@ -25,7 +25,7 @@
         :disabled="!checkPermission(['AbpIdentityServer.Clients.Create'])"
         @click="handleShowCreateClientDialog()"
       >
-        {{ $t('AbpIdentityServer.Client:New') }}
+        {{ $t('LazyAbp.Client:New') }}
       </el-button>
     </div>
 
@@ -40,7 +40,7 @@
       @sort-change="handleSortChange"
     >
       <el-table-column
-        :label="$t('AbpIdentityServer.Client:Id')"
+        :label="$t('LazyAbp.Client:Id')"
         prop="clientId"
         sortable
         width="150px"
@@ -51,7 +51,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Name')"
+        :label="$t('LazyAbp.Name')"
         prop="clientName"
         sortable
         width="200px"
@@ -62,7 +62,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Description')"
+        :label="$t('LazyAbp.Description')"
         prop="description"
         sortable
         width="200px"
@@ -73,7 +73,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Client:Enabled')"
+        :label="$t('LazyAbp.Client:Enabled')"
         prop="enabled"
         sortable
         width="140px"
@@ -87,7 +87,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Client:ProtocolType')"
+        :label="$t('LazyAbp.Client:ProtocolType')"
         prop="protocolType"
         sortable
         width="120px"
@@ -98,7 +98,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Client:IdentityTokenLifetime')"
+        :label="$t('LazyAbp.Client:IdentityTokenLifetime')"
         prop="identityTokenLifetime"
         width="170px"
         align="center"
@@ -108,7 +108,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Client:AccessTokenLifetime')"
+        :label="$t('LazyAbp.Client:AccessTokenLifetime')"
         prop="accessTokenLifetime"
         width="170px"
         align="center"
@@ -118,7 +118,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Client:AuthorizationCodeLifetime')"
+        :label="$t('LazyAbp.Client:AuthorizationCodeLifetime')"
         prop="authorizationCodeLifetime"
         width="170px"
         align="center"
@@ -128,7 +128,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Client:DeviceCodeLifetime')"
+        :label="$t('LazyAbp.Client:DeviceCodeLifetime')"
         prop="deviceCodeLifetime"
         width="170px"
         align="center"
@@ -138,7 +138,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Client:AbsoluteRefreshTokenLifetime')"
+        :label="$t('LazyAbp.Client:AbsoluteRefreshTokenLifetime')"
         prop="absoluteRefreshTokenLifetime"
         width="180px"
         align="center"
@@ -148,7 +148,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Client:SlidingRefreshTokenLifetime')"
+        :label="$t('LazyAbp.Client:SlidingRefreshTokenLifetime')"
         prop="slidingRefreshTokenLifetime"
         width="180px"
         align="center"
@@ -158,7 +158,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Client:ClientClaimsPrefix')"
+        :label="$t('LazyAbp.Client:ClientClaimsPrefix')"
         prop="clientClaimsPrefix"
         width="120px"
         align="center"
@@ -180,7 +180,7 @@
             type="primary"
             @click="handleShowEditClientDialog(row)"
           >
-            {{ $t('AbpIdentityServer.Client:Edit') }}
+            {{ $t('LazyAbp.Client:Edit') }}
           </el-button>
           <el-dropdown
             class="options"
@@ -198,7 +198,7 @@
                 :command="{key: 'permissions', row}"
                 :disabled="!checkPermission(['AbpIdentityServer.Clients.ManagePermissions'])"
               >
-                {{ $t('AbpIdentityServer.Permissions') }}
+                {{ $t('LazyAbp.Permissions') }}
               </el-dropdown-item>
               <el-dropdown-item
                 v-permission="['FeatureManagement.ManageHostFeatures']"
@@ -210,14 +210,14 @@
                 :command="{key: 'clone', row}"
                 :disabled="!checkPermission(['AbpIdentityServer.Clients.Clone'])"
               >
-                {{ $t('AbpIdentityServer.Client:Clone') }}
+                {{ $t('LazyAbp.Client:Clone') }}
               </el-dropdown-item>
               <el-dropdown-item
                 divided
                 :command="{key: 'delete', row}"
                 :disabled="!checkPermission(['AbpIdentityServer.Clients.Delete'])"
               >
-                {{ $t('AbpIdentityServer.Client:Delete') }}
+                {{ $t('LazyAbp.Client:Delete') }}
               </el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>

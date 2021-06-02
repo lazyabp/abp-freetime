@@ -54,7 +54,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Actions')"
+        :label="$t('LazyAbp.Actions')"
         align="right"
         min-width="80px"
       >

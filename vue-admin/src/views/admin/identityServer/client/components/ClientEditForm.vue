@@ -21,7 +21,7 @@
       >
         <el-tab-pane
           name="basics"
-          :label="$t('AbpIdentityServer.Basics')"
+          :label="$t('LazyAbp.Basics')"
         >
           <el-form-item
             prop="enabled"
@@ -31,7 +31,7 @@
               v-model="client.enabled"
               class="label-title"
             >
-              {{ $t('AbpIdentityServer.Client:Enabled') }}
+              {{ $t('LazyAbp.Client:Enabled') }}
             </el-checkbox>
           </el-form-item>
           <el-form-item
@@ -42,15 +42,15 @@
               v-model="client.requireRequestObject"
               class="label-title"
             >
-              {{ $t('AbpIdentityServer.Client:RequireRequestObject') }}
+              {{ $t('LazyAbp.Client:RequireRequestObject') }}
             </el-checkbox>
           </el-form-item>
           <el-form-item
             prop="clientId"
-            :label="$t('AbpIdentityServer.Client:Id')"
+            :label="$t('LazyAbp.Client:Id')"
             :rules="{
               required: true,
-              message: $t('pleaseInputBy', {key: $t('AbpIdentityServer.Client:Id')}),
+              message: $t('pleaseInputBy', {key: $t('LazyAbp.Client:Id')}),
               trigger: 'blur'
             }"
           >
@@ -61,21 +61,21 @@
           </el-form-item>
           <el-form-item
             prop="clientName"
-            :label="$t('AbpIdentityServer.Name')"
+            :label="$t('LazyAbp.Name')"
             :rules="{
               required: true,
-              message: $t('pleaseInputBy', {key: $t('AbpIdentityServer.Name')}),
+              message: $t('pleaseInputBy', {key: $t('LazyAbp.Name')}),
               trigger: 'blur'
             }"
           >
             <el-input
               v-model="client.clientName"
-              :placeholder="$t('pleaseInputBy', {key: $t('AbpIdentityServer.Name')})"
+              :placeholder="$t('pleaseInputBy', {key: $t('LazyAbp.Name')})"
             />
           </el-form-item>
           <el-form-item
             prop="description"
-            :label="$t('AbpIdentityServer.Description')"
+            :label="$t('LazyAbp.Description')"
           >
             <el-input
               v-model="client.description"
@@ -84,17 +84,17 @@
           </el-form-item>
           <el-form-item
             prop="protocolType"
-            :label="$t('AbpIdentityServer.Client:ProtocolType')"
+            :label="$t('LazyAbp.Client:ProtocolType')"
             :rules="{
               required: true,
-              message: $t('pleaseSelectBy', {key: $t('AbpIdentityServer.Client:ProtocolType')}),
+              message: $t('pleaseSelectBy', {key: $t('LazyAbp.Client:ProtocolType')}),
               trigger: 'blur'
             }"
           >
             <el-select
               v-model="client.protocolType"
               class="full-select"
-              :placeholder="$t('pleaseSelectBy', {name: $t('AbpIdentityServer.Client:ProtocolType')})"
+              :placeholder="$t('pleaseSelectBy', {name: $t('LazyAbp.Client:ProtocolType')})"
             >
               <el-option
                 key="oidc"
@@ -105,7 +105,7 @@
           </el-form-item>
           <el-form-item
             prop="allowedIdentityTokenSigningAlgorithms"
-            :label="$t('AbpIdentityServer.Client:AllowedIdentityTokenSigningAlgorithms')"
+            :label="$t('LazyAbp.Client:AllowedIdentityTokenSigningAlgorithms')"
             label-width="180px"
           >
             <el-input
@@ -120,7 +120,7 @@
               v-model="client.requirePkce"
               class="label-title"
             >
-              {{ $t('AbpIdentityServer.Client:RequiredPkce') }}
+              {{ $t('LazyAbp.Client:RequiredPkce') }}
             </el-checkbox>
           </el-form-item>
           <el-form-item
@@ -131,7 +131,7 @@
               v-model="client.allowPlainTextPkce"
               class="label-title"
             >
-              {{ $t('AbpIdentityServer.Client:AllowedPlainTextPkce') }}
+              {{ $t('LazyAbp.Client:AllowedPlainTextPkce') }}
             </el-checkbox>
           </el-form-item>
         </el-tab-pane>
@@ -143,7 +143,7 @@
             @command="onUrlsDropdownItemChanged"
           >
             <span class="el-dropdown-link">
-              {{ $t('AbpIdentityServer.Client:ApplicationUrls') }}
+              {{ $t('LazyAbp.Client:ApplicationUrls') }}
               <i class="el-icon-arrow-down el-icon--right" />
             </span>
             <el-dropdown-menu slot="dropdown">
@@ -152,33 +152,33 @@
                   component: 'redirect-edit-form',
                   prop: 'redirectUris',
                   key: 'redirectUri',
-                  title: $t('AbpIdentityServer.Client:CallbackUrl'),
+                  title: $t('LazyAbp.Client:CallbackUrl'),
                   suggestes: []
                 }"
               >
-                {{ $t('AbpIdentityServer.Client:CallbackUrl') }}
+                {{ $t('LazyAbp.Client:CallbackUrl') }}
               </el-dropdown-item>
               <el-dropdown-item
                 :command="{
                   component: 'signout-edit-form',
                   prop: 'postLogoutRedirectUris',
                   key: 'postLogoutRedirectUri',
-                  title: $t('AbpIdentityServer.Client:PostLogoutRedirectUri'),
+                  title: $t('LazyAbp.Client:PostLogoutRedirectUri'),
                   suggestes: []
                 }"
               >
-                {{ $t('AbpIdentityServer.Client:PostLogoutRedirectUri') }}
+                {{ $t('LazyAbp.Client:PostLogoutRedirectUri') }}
               </el-dropdown-item>
               <el-dropdown-item
                 :command="{
                   component: 'cors-origin-edit-form',
                   prop: 'allowedCorsOrigins',
                   key: 'origin',
-                  title: $t('AbpIdentityServer.Client:AllowedCorsOrigins'),
+                  title: $t('LazyAbp.Client:AllowedCorsOrigins'),
                   suggestes: distinctAllowedCorsOrigins
                 }"
               >
-                {{ $t('AbpIdentityServer.Client:AllowedCorsOrigins') }}
+                {{ $t('LazyAbp.Client:AllowedCorsOrigins') }}
               </el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
@@ -197,25 +197,25 @@
             @command="onResourceDropdownItemChanged"
           >
             <span class="el-dropdown-link">
-              {{ $t('AbpIdentityServer.Client:Resources') }}
+              {{ $t('LazyAbp.Client:Resources') }}
               <i class="el-icon-arrow-down el-icon--right" />
             </span>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item
                 :command="{
-                  title: $t('AbpIdentityServer.Resource:Api'),
+                  title: $t('LazyAbp.Resource:Api'),
                   scopes: apiResources
                 }"
               >
-                {{ $t('AbpIdentityServer.Resource:Api') }}
+                {{ $t('LazyAbp.Resource:Api') }}
               </el-dropdown-item>
               <el-dropdown-item
                 :command="{
-                  title: $t('AbpIdentityServer.Resource:Identity'),
+                  title: $t('LazyAbp.Resource:Identity'),
                   scopes: identityResources
                 }"
               >
-                {{ $t('AbpIdentityServer.Resource:Identity') }}
+                {{ $t('LazyAbp.Resource:Identity') }}
               </el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
@@ -227,7 +227,7 @@
         </el-tab-pane>
         <el-tab-pane
           name="authentication"
-          :label="$t('AbpIdentityServer.Authentication')"
+          :label="$t('LazyAbp.Authentication')"
         >
           <el-form-item
             prop="frontChannelLogoutSessionRequired"
@@ -237,12 +237,12 @@
               v-model="client.frontChannelLogoutSessionRequired"
               class="label-title"
             >
-              {{ $t('AbpIdentityServer.Client:FrontChannelLogoutSessionRequired') }}
+              {{ $t('LazyAbp.Client:FrontChannelLogoutSessionRequired') }}
             </el-checkbox>
           </el-form-item>
           <el-form-item
             prop="frontChannelLogoutUri"
-            :label="$t('AbpIdentityServer.Client:FrontChannelLogoutUri')"
+            :label="$t('LazyAbp.Client:FrontChannelLogoutUri')"
             label-width="140px"
           >
             <el-input
@@ -258,12 +258,12 @@
               v-model="client.backChannelLogoutSessionRequired"
               class="label-title"
             >
-              {{ $t('AbpIdentityServer.Client:BackChannelLogoutSessionRequired') }}
+              {{ $t('LazyAbp.Client:BackChannelLogoutSessionRequired') }}
             </el-checkbox>
           </el-form-item>
           <el-form-item
             prop="backChannelLogoutUri"
-            :label="$t('AbpIdentityServer.Client:BackChannelLogoutUri')"
+            :label="$t('LazyAbp.Client:BackChannelLogoutUri')"
             label-width="140px"
           >
             <el-input
@@ -274,15 +274,15 @@
         </el-tab-pane>
         <el-tab-pane
           name="token"
-          :label="$t('AbpIdentityServer.Token')"
+          :label="$t('LazyAbp.Token')"
         >
           <el-form-item
             prop="identityTokenLifetime"
-            :label="$t('AbpIdentityServer.Client:IdentityTokenLifetime')"
+            :label="$t('LazyAbp.Client:IdentityTokenLifetime')"
             label-width="165px"
             :rules="{
               required: true,
-              message: $t('pleaseInputBy', {key: $t('AbpIdentityServer.Client:IdentityTokenLifetime')}),
+              message: $t('pleaseInputBy', {key: $t('LazyAbp.Client:IdentityTokenLifetime')}),
               trigger: 'blur'
             }"
           >
@@ -293,11 +293,11 @@
           </el-form-item>
           <el-form-item
             prop="accessTokenLifetime"
-            :label="$t('AbpIdentityServer.Client:AccessTokenLifetime')"
+            :label="$t('LazyAbp.Client:AccessTokenLifetime')"
             label-width="165px"
             :rules="{
               required: true,
-              message: $t('pleaseInputBy', {key: $t('AbpIdentityServer.Client:AccessTokenLifetime')}),
+              message: $t('pleaseInputBy', {key: $t('LazyAbp.Client:AccessTokenLifetime')}),
               trigger: 'blur'
             }"
           >
@@ -308,18 +308,18 @@
           </el-form-item>
           <el-form-item
             prop="accessTokenType"
-            :label="$t('AbpIdentityServer.Client:AccessTokenType')"
+            :label="$t('LazyAbp.Client:AccessTokenType')"
             label-width="165px"
             :rules="{
               required: true,
-              message: $t('pleaseSelectBy', {key: $t('AbpIdentityServer.Client:AccessTokenType')}),
+              message: $t('pleaseSelectBy', {key: $t('LazyAbp.Client:AccessTokenType')}),
               trigger: 'blur'
             }"
           >
             <el-select
               v-model="client.accessTokenType"
               class="full-select"
-              :placeholder="$t('pleaseSelectBy', {name: $t('AbpIdentityServer.Client:AccessTokenType')})"
+              :placeholder="$t('pleaseSelectBy', {name: $t('LazyAbp.Client:AccessTokenType')})"
             >
               <el-option
                 :key="0"
@@ -335,11 +335,11 @@
           </el-form-item>
           <el-form-item
             prop="authorizationCodeLifetime"
-            :label="$t('AbpIdentityServer.Client:AuthorizationCodeLifetime')"
+            :label="$t('LazyAbp.Client:AuthorizationCodeLifetime')"
             label-width="165px"
             :rules="{
               required: true,
-              message: $t('pleaseInputBy', {key: $t('AbpIdentityServer.Client:AuthorizationCodeLifetime')}),
+              message: $t('pleaseInputBy', {key: $t('LazyAbp.Client:AuthorizationCodeLifetime')}),
               trigger: 'blur'
             }"
           >
@@ -350,11 +350,11 @@
           </el-form-item>
           <el-form-item
             prop="absoluteRefreshTokenLifetime"
-            :label="$t('AbpIdentityServer.Client:AbsoluteRefreshTokenLifetime')"
+            :label="$t('LazyAbp.Client:AbsoluteRefreshTokenLifetime')"
             label-width="165px"
             :rules="{
               required: true,
-              message: $t('pleaseInputBy', {key: $t('AbpIdentityServer.Client:AbsoluteRefreshTokenLifetime')}),
+              message: $t('pleaseInputBy', {key: $t('LazyAbp.Client:AbsoluteRefreshTokenLifetime')}),
               trigger: 'blur'
             }"
           >
@@ -365,11 +365,11 @@
           </el-form-item>
           <el-form-item
             prop="slidingRefreshTokenLifetime"
-            :label="$t('AbpIdentityServer.Client:SlidingRefreshTokenLifetime')"
+            :label="$t('LazyAbp.Client:SlidingRefreshTokenLifetime')"
             label-width="165px"
             :rules="{
               required: true,
-              message: $t('pleaseInputBy', {key: $t('AbpIdentityServer.Client:SlidingRefreshTokenLifetime')}),
+              message: $t('pleaseInputBy', {key: $t('LazyAbp.Client:SlidingRefreshTokenLifetime')}),
               trigger: 'blur'
             }"
           >
@@ -380,18 +380,18 @@
           </el-form-item>
           <el-form-item
             prop="refreshTokenUsage"
-            :label="$t('AbpIdentityServer.Client:RefreshTokenUsage')"
+            :label="$t('LazyAbp.Client:RefreshTokenUsage')"
             label-width="165px"
             :rules="{
               required: true,
-              message: $t('pleaseSelectBy', {key: $t('AbpIdentityServer.Client:RefreshTokenUsage')}),
+              message: $t('pleaseSelectBy', {key: $t('LazyAbp.Client:RefreshTokenUsage')}),
               trigger: 'blur'
             }"
           >
             <el-select
               v-model="client.refreshTokenUsage"
               class="full-select"
-              :placeholder="$t('pleaseSelectBy', {name: $t('AbpIdentityServer.Client:RefreshTokenUsage')})"
+              :placeholder="$t('pleaseSelectBy', {name: $t('LazyAbp.Client:RefreshTokenUsage')})"
             >
               <el-option
                 :key="0"
@@ -407,18 +407,18 @@
           </el-form-item>
           <el-form-item
             prop="refreshTokenExpiration"
-            :label="$t('AbpIdentityServer.Client:RefreshTokenExpiration')"
+            :label="$t('LazyAbp.Client:RefreshTokenExpiration')"
             label-width="165px"
             :rules="{
               required: true,
-              message: $t('pleaseInputBy', {key: $t('AbpIdentityServer.Client:RefreshTokenExpiration')}),
+              message: $t('pleaseInputBy', {key: $t('LazyAbp.Client:RefreshTokenExpiration')}),
               trigger: 'blur'
             }"
           >
             <el-select
               v-model="client.refreshTokenExpiration"
               class="full-select"
-              :placeholder="$t('pleaseSelectBy', {name: $t('AbpIdentityServer.Client:RefreshTokenExpiration')})"
+              :placeholder="$t('pleaseSelectBy', {name: $t('LazyAbp.Client:RefreshTokenExpiration')})"
             >
               <el-option
                 :key="0"
@@ -434,7 +434,7 @@
           </el-form-item>
           <el-form-item
             prop="userSsoLifetime"
-            :label="$t('AbpIdentityServer.Client:UserSsoLifetime')"
+            :label="$t('LazyAbp.Client:UserSsoLifetime')"
             label-width="140px"
           >
             <el-input
@@ -452,7 +452,7 @@
                   v-model="client.allowOfflineAccess"
                   class="label-title"
                 >
-                  {{ $t('AbpIdentityServer.Client:AllowedOfflineAccess') }}
+                  {{ $t('LazyAbp.Client:AllowedOfflineAccess') }}
                 </el-checkbox>
               </el-form-item>
             </el-col>
@@ -465,7 +465,7 @@
                   v-model="client.allowAccessTokensViaBrowser"
                   class="label-title"
                 >
-                  {{ $t('AbpIdentityServer.Client:AllowedAccessTokensViaBrowser') }}
+                  {{ $t('LazyAbp.Client:AllowedAccessTokensViaBrowser') }}
                 </el-checkbox>
               </el-form-item>
             </el-col>
@@ -480,7 +480,7 @@
                   v-model="client.updateAccessTokenClaimsOnRefresh"
                   class="label-title"
                 >
-                  {{ $t('AbpIdentityServer.Client:UpdateAccessTokenClaimsOnRefresh') }}
+                  {{ $t('LazyAbp.Client:UpdateAccessTokenClaimsOnRefresh') }}
                 </el-checkbox>
               </el-form-item>
             </el-col>
@@ -493,14 +493,14 @@
                   v-model="client.includeJwtId"
                   class="label-title"
                 >
-                  {{ $t('AbpIdentityServer.Client:IncludeJwtId') }}
+                  {{ $t('LazyAbp.Client:IncludeJwtId') }}
                 </el-checkbox>
               </el-form-item>
             </el-col>
           </el-row>
           <el-form-item
             prop="clientClaimsPrefix"
-            :label="$t('AbpIdentityServer.Client:ClientClaimsPrefix')"
+            :label="$t('LazyAbp.Client:ClientClaimsPrefix')"
             label-width="165px"
           >
             <el-input
@@ -509,7 +509,7 @@
           </el-form-item>
           <el-form-item
             prop="pairWiseSubjectSalt"
-            :label="$t('AbpIdentityServer.Client:PairWiseSubjectSalt')"
+            :label="$t('LazyAbp.Client:PairWiseSubjectSalt')"
             label-width="165px"
           >
             <el-input
@@ -519,7 +519,7 @@
         </el-tab-pane>
         <el-tab-pane
           name="consent"
-          :label="$t('AbpIdentityServer.Consent')"
+          :label="$t('LazyAbp.Consent')"
         >
           <el-form-item
             prop="requireConsent"
@@ -529,7 +529,7 @@
               v-model="client.requireConsent"
               class="label-title"
             >
-              {{ $t('AbpIdentityServer.Client:RequireConsent') }}
+              {{ $t('LazyAbp.Client:RequireConsent') }}
             </el-checkbox>
           </el-form-item>
           <el-form-item
@@ -540,12 +540,12 @@
               v-model="client.allowRememberConsent"
               class="label-title"
             >
-              {{ $t('AbpIdentityServer.Client:AllowRememberConsent') }}
+              {{ $t('LazyAbp.Client:AllowRememberConsent') }}
             </el-checkbox>
           </el-form-item>
           <el-form-item
             prop="clientUri"
-            :label="$t('AbpIdentityServer.Client:ClientUri')"
+            :label="$t('LazyAbp.Client:ClientUri')"
           >
             <el-input
               v-model="client.clientUri"
@@ -553,7 +553,7 @@
           </el-form-item>
           <el-form-item
             prop="logoUri"
-            :label="$t('AbpIdentityServer.Client:LogoUri')"
+            :label="$t('LazyAbp.Client:LogoUri')"
           >
             <el-input
               v-model="client.logoUri"
@@ -562,11 +562,11 @@
         </el-tab-pane>
         <el-tab-pane
           name="deviceFlow"
-          :label="$t('AbpIdentityServer.DeviceFlow')"
+          :label="$t('LazyAbp.DeviceFlow')"
         >
           <el-form-item
             prop="userCodeType"
-            :label="$t('AbpIdentityServer.Client:UserCodeType')"
+            :label="$t('LazyAbp.Client:UserCodeType')"
             label-width="155px"
           >
             <el-input
@@ -575,11 +575,11 @@
           </el-form-item>
           <el-form-item
             prop="deviceCodeLifetime"
-            :label="$t('AbpIdentityServer.Client:DeviceCodeLifetime')"
+            :label="$t('LazyAbp.Client:DeviceCodeLifetime')"
             label-width="155px"
             :rules="{
               required: true,
-              message: $t('pleaseInputBy', {key: $t('AbpIdentityServer.Client:DeviceCodeLifetime')}),
+              message: $t('pleaseInputBy', {key: $t('LazyAbp.Client:DeviceCodeLifetime')}),
               trigger: 'blur'
             }"
           >
@@ -597,56 +597,56 @@
             @command="onAdvancedDropdownItemChanged"
           >
             <span class="el-dropdown-link">
-              {{ $t('AbpIdentityServer.Advanced') }}<i class="el-icon-arrow-down el-icon--right" />
+              {{ $t('LazyAbp.Advanced') }}<i class="el-icon-arrow-down el-icon--right" />
             </span>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item
                 :command="{
                   component: 'client-secret-edit-form',
                   prop: 'clientSecrets',
-                  title: $t('AbpIdentityServer.Secret')
+                  title: $t('LazyAbp.Secret')
                 }"
               >
-                {{ $t('AbpIdentityServer.Secret') }}
+                {{ $t('LazyAbp.Secret') }}
               </el-dropdown-item>
               <el-dropdown-item
                 :command="{
                   component: 'client-claim-edit-form',
                   prop: 'claims',
-                  title: $t('AbpIdentityServer.Claims')
+                  title: $t('LazyAbp.Claims')
                 }"
               >
-                {{ $t('AbpIdentityServer.Claims') }}
+                {{ $t('LazyAbp.Claims') }}
               </el-dropdown-item>
               <el-dropdown-item
                 :command="{
                   component: 'properties-edit-form',
                   prop: 'properties',
                   key: 'key',
-                  title: $t('AbpIdentityServer.Propertites')
+                  title: $t('LazyAbp.Propertites')
                 }"
               >
-                {{ $t('AbpIdentityServer.Propertites') }}
+                {{ $t('LazyAbp.Propertites') }}
               </el-dropdown-item>
               <el-dropdown-item
                 :command="{
                   component: 'grant-type-edit-form',
                   prop: 'allowedGrantTypes',
                   key: 'grantType',
-                  title: $t('AbpIdentityServer.Client:AllowedGrantTypes')
+                  title: $t('LazyAbp.Client:AllowedGrantTypes')
                 }"
               >
-                {{ $t('AbpIdentityServer.Client:AllowedGrantTypes') }}
+                {{ $t('LazyAbp.Client:AllowedGrantTypes') }}
               </el-dropdown-item>
               <el-dropdown-item
                 :command="{
                   component: 'client-idp-edit-form',
                   prop: 'identityProviderRestrictions',
                   key: 'provider',
-                  title: $t('AbpIdentityServer.Client:IdentityProviderRestrictions')
+                  title: $t('LazyAbp.Client:IdentityProviderRestrictions')
                 }"
               >
-                {{ $t('AbpIdentityServer.Client:IdentityProviderRestrictions') }}
+                {{ $t('LazyAbp.Client:IdentityProviderRestrictions') }}
               </el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
@@ -668,7 +668,7 @@
           type="info"
           @click="onFormClosed"
         >
-          {{ $t('AbpIdentityServer.Cancel') }}
+          {{ $t('LazyAbp.Cancel') }}
         </el-button>
         <el-button
           class="confirm"
@@ -677,7 +677,7 @@
           :loading="changeClient"
           @click="onSave"
         >
-          {{ $t('AbpIdentityServer.Save') }}
+          {{ $t('LazyAbp.Save') }}
         </el-button>
       </el-form-item>
     </el-form>

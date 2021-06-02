@@ -3,22 +3,22 @@
     <el-form label-width="100px">
       <el-tabs v-model="activedTabItem">
         <el-tab-pane
-          :label="$t('AbpAuditLogging.Application')"
+          :label="$t('LazyAbp.Application')"
           name="application"
         >
-          <el-form-item :label="$t('AbpAuditLogging.ApplicationName')">
+          <el-form-item :label="$t('LazyAbp.ApplicationName')">
             <el-input
               v-model="auditLog.applicationName"
               readonly
             />
           </el-form-item>
-          <el-form-item :label="$t('AbpAuditLogging.TenantId')">
+          <el-form-item :label="$t('LazyAbp.TenantId')">
             <el-input
               v-model="auditLog.tenantId"
               readonly
             />
           </el-form-item>
-          <el-form-item :label="$t('AbpAuditLogging.TenantName')">
+          <el-form-item :label="$t('LazyAbp.TenantName')">
             <el-input
               v-model="auditLog.tenantName"
               readonly
@@ -26,7 +26,7 @@
           </el-form-item>
           <el-form-item
             v-if="auditLog.impersonatorTenantId !== null"
-            :label="$t('AbpAuditLogging.ImpersonatorTenantId')"
+            :label="$t('LazyAbp.ImpersonatorTenantId')"
           >
             <el-input
               v-model="auditLog.impersonatorTenantId"
@@ -35,10 +35,10 @@
           </el-form-item>
         </el-tab-pane>
         <el-tab-pane
-          :label="$t('AbpAuditLogging.UserInfo')"
+          :label="$t('LazyAbp.UserInfo')"
           name="userInfo"
         >
-          <el-form-item :label="$t('AbpAuditLogging.UserId')">
+          <el-form-item :label="$t('LazyAbp.UserId')">
             <el-input
               v-model="auditLog.userId"
               readonly
@@ -46,38 +46,38 @@
           </el-form-item>
           <el-form-item
             v-if="auditLog.impersonatorUserId !== null"
-            :label="$t('AbpAuditLogging.ImpersonatorUserId')"
+            :label="$t('LazyAbp.ImpersonatorUserId')"
           >
             <el-input
               v-model="auditLog.impersonatorUserId"
               readonly
             />
           </el-form-item>
-          <el-form-item :label="$t('AbpAuditLogging.UserName')">
+          <el-form-item :label="$t('LazyAbp.UserName')">
             <el-input
               v-model="auditLog.userName"
               readonly
             />
           </el-form-item>
-          <el-form-item :label="$t('AbpAuditLogging.ClientId')">
+          <el-form-item :label="$t('LazyAbp.ClientId')">
             <el-input
               v-model="auditLog.clientId"
               readonly
             />
           </el-form-item>
-          <el-form-item :label="$t('AbpAuditLogging.ClientName')">
+          <el-form-item :label="$t('LazyAbp.ClientName')">
             <el-input
               v-model="auditLog.clientName"
               readonly
             />
           </el-form-item>
-          <el-form-item :label="$t('AbpAuditLogging.ClientIpAddress')">
+          <el-form-item :label="$t('LazyAbp.ClientIpAddress')">
             <el-input
               v-model="auditLog.clientIpAddress"
               readonly
             />
           </el-form-item>
-          <el-form-item :label="$t('AbpAuditLogging.BrowserInfo')">
+          <el-form-item :label="$t('LazyAbp.BrowserInfo')">
             <el-input
               v-model="auditLog.browserInfo"
               type="textarea"
@@ -86,40 +86,40 @@
           </el-form-item>
         </el-tab-pane>
         <el-tab-pane
-          :label="$t('AbpAuditLogging.Operation')"
+          :label="$t('LazyAbp.Operation')"
           name="operation"
         >
-          <el-form-item :label="$t('AbpAuditLogging.RequestUrl')">
+          <el-form-item :label="$t('LazyAbp.RequestUrl')">
             <el-input
               v-model="auditLog.url"
               readonly
             />
           </el-form-item>
-          <el-form-item :label="$t('AbpAuditLogging.HttpMethod')">
+          <el-form-item :label="$t('LazyAbp.HttpMethod')">
             <el-input
               v-model="auditLog.httpMethod"
               readonly
             />
           </el-form-item>
-          <el-form-item :label="$t('AbpAuditLogging.ExecutionTime')">
+          <el-form-item :label="$t('LazyAbp.ExecutionTime')">
             <el-input
               :value="getFormatDateTime(auditLog.executionTime)"
               readonly
             />
           </el-form-item>
-          <el-form-item :label="$t('AbpAuditLogging.ExecutionDuration')">
+          <el-form-item :label="$t('LazyAbp.ExecutionDuration')">
             <el-input
               v-model="auditLog.executionDuration"
               readonly
             />
           </el-form-item>
-          <el-form-item :label="$t('AbpAuditLogging.HttpStatusCode')">
+          <el-form-item :label="$t('LazyAbp.HttpStatusCode')">
             <el-input
               v-model="auditLog.httpStatusCode"
               readonly
             />
           </el-form-item>
-          <el-form-item :label="$t('AbpAuditLogging.CorrelationId')">
+          <el-form-item :label="$t('LazyAbp.CorrelationId')">
             <el-input
               v-model="auditLog.correlationId"
               readonly
@@ -127,7 +127,7 @@
           </el-form-item>
         </el-tab-pane>
         <el-tab-pane
-          :label="$t('AbpAuditLogging.InvokeMethod')"
+          :label="$t('LazyAbp.InvokeMethod')"
           name="methodInvoke"
           style="height:300px;overflow-y:auto;overflow-x:hidden;"
         >
@@ -140,25 +140,25 @@
               placement="top"
             >
               <el-card>
-                <el-form-item :label="$t('AbpAuditLogging.ServiceName')">
+                <el-form-item :label="$t('LazyAbp.ServiceName')">
                   <el-input
                     v-model="action.serviceName"
                     readonly
                   />
                 </el-form-item>
-                <el-form-item :label="$t('AbpAuditLogging.MethodName')">
+                <el-form-item :label="$t('LazyAbp.MethodName')">
                   <el-input
                     v-model="action.methodName"
                     readonly
                   />
                 </el-form-item>
-                <el-form-item :label="$t('AbpAuditLogging.ExecutionDuration')">
+                <el-form-item :label="$t('LazyAbp.ExecutionDuration')">
                   <el-input
                     v-model="action.executionDuration"
                     readonly
                   />
                 </el-form-item>
-                <el-form-item :label="$t('AbpAuditLogging.Parameters')">
+                <el-form-item :label="$t('LazyAbp.Parameters')">
                   <json-editor
                     :value="getFormatJsonValue(action.parameters)"
                   />
@@ -169,7 +169,7 @@
         </el-tab-pane>
         <el-tab-pane
           v-if="getEntitiesChanges.length > 0"
-          :label="$t('AbpAuditLogging.EntitiesChanged')"
+          :label="$t('LazyAbp.EntitiesChanged')"
           name="entitiesChanged"
           style="height:300px;overflow-y:auto;overflow-x:hidden;"
         >
@@ -182,31 +182,31 @@
               placement="top"
             >
               <el-card>
-                <el-form-item :label="$t('AbpAuditLogging.ChangeType')">
+                <el-form-item :label="$t('LazyAbp.ChangeType')">
                   <el-input
                     :value="getEntityChangeTypeName(entity.changeType)"
                     readonly
                   />
                 </el-form-item>
-                <el-form-item :label="$t('AbpAuditLogging.EntityTypeFullName')">
+                <el-form-item :label="$t('LazyAbp.EntityTypeFullName')">
                   <el-input
                     v-model="entity.entityTypeFullName"
                     readonly
                   />
                 </el-form-item>
-                <el-form-item :label="$t('AbpAuditLogging.EntityId')">
+                <el-form-item :label="$t('LazyAbp.EntityId')">
                   <el-input
                     v-model="entity.entityId"
                     readonly
                   />
                 </el-form-item>
-                <el-form-item :label="$t('AbpAuditLogging.TenantId')">
+                <el-form-item :label="$t('LazyAbp.TenantId')">
                   <el-input
                     v-model="entity.entityTenantId"
                     readonly
                   />
                 </el-form-item>
-                <el-form-item :label="$t('AbpAuditLogging.PropertyChanges')">
+                <el-form-item :label="$t('LazyAbp.PropertyChanges')">
                   <el-table
                     row-key="id"
                     :data="entity.propertyChanges"
@@ -216,7 +216,7 @@
                     style="width: 100%;"
                   >
                     <el-table-column
-                      :label="$t('AbpAuditLogging.PropertyName')"
+                      :label="$t('LazyAbp.PropertyName')"
                       prop="propertyName"
                       sortable
                       width="200px"
@@ -226,7 +226,7 @@
                       </template>
                     </el-table-column>
                     <el-table-column
-                      :label="$t('AbpAuditLogging.NewValue')"
+                      :label="$t('LazyAbp.NewValue')"
                       prop="newValue"
                       sortable
                       width="320px"
@@ -236,7 +236,7 @@
                       </template>
                     </el-table-column>
                     <el-table-column
-                      :label="$t('AbpAuditLogging.OriginalValue')"
+                      :label="$t('LazyAbp.OriginalValue')"
                       prop="originalValue"
                       sortable
                       width="320px"
@@ -246,7 +246,7 @@
                       </template>
                     </el-table-column>
                     <el-table-column
-                      :label="$t('AbpAuditLogging.PropertyTypeFullName')"
+                      :label="$t('LazyAbp.PropertyTypeFullName')"
                       prop="propertyTypeFullName"
                       sortable
                       width="500px"
@@ -263,10 +263,10 @@
         </el-tab-pane>
         <el-tab-pane
           v-if="hasException"
-          :label="$t('AbpAuditLogging.Exception')"
+          :label="$t('LazyAbp.Exception')"
           name="exception"
         >
-          <el-form-item :label="$t('AbpAuditLogging.StackTrack')">
+          <el-form-item :label="$t('LazyAbp.StackTrack')">
             <el-input
               v-model="auditLog.exceptions"
               type="textarea"
@@ -277,7 +277,7 @@
         </el-tab-pane>
         <el-tab-pane
           v-if="hasExtraProperties"
-          :label="$t('AbpAuditLogging.Additional')"
+          :label="$t('LazyAbp.Additional')"
           name="extraProperties"
         >
           <el-form-item

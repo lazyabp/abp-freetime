@@ -10,21 +10,21 @@
             <el-form label-width="100px">
               <el-row>
                 <el-col :span="8">
-                  <el-form-item :label="$t('AbpAuditLogging.ApplicationName')">
+                  <el-form-item :label="$t('LazyAbp.ApplicationName')">
                     <el-input
                       v-model="dataFilter.applicationName"
                     />
                   </el-form-item>
                 </el-col>
                 <el-col :span="8">
-                  <el-form-item :label="$t('AbpAuditLogging.UserName')">
+                  <el-form-item :label="$t('LazyAbp.UserName')">
                     <el-input
                       v-model="dataFilter.userName"
                     />
                   </el-form-item>
                 </el-col>
                 <el-col :span="8">
-                  <el-form-item :label="$t('AbpAuditLogging.ClientId')">
+                  <el-form-item :label="$t('LazyAbp.ClientId')">
                     <el-input
                       v-model="dataFilter.clientId"
                     />
@@ -33,21 +33,21 @@
               </el-row>
               <el-row>
                 <el-col :span="8">
-                  <el-form-item :label="$t('AbpAuditLogging.Identity')">
+                  <el-form-item :label="$t('LazyAbp.Identity')">
                     <el-input
                       v-model="dataFilter.identity"
                     />
                   </el-form-item>
                 </el-col>
                 <el-col :span="8">
-                  <el-form-item :label="$t('AbpAuditLogging.ActionName')">
+                  <el-form-item :label="$t('LazyAbp.ActionName')">
                     <el-input
                       v-model="dataFilter.actionName"
                     />
                   </el-form-item>
                 </el-col>
                 <el-col :span="8">
-                  <el-form-item :label="$t('AbpAuditLogging.CorrelationId')">
+                  <el-form-item :label="$t('LazyAbp.CorrelationId')">
                     <el-input
                       v-model="dataFilter.correlationId"
                     />
@@ -56,10 +56,10 @@
               </el-row>
               <el-row>
                 <el-col :span="12">
-                  <el-form-item :label="$t('AbpAuditLogging.StartTime')">
+                  <el-form-item :label="$t('LazyAbp.StartTime')">
                     <el-date-picker
                       v-model="dataFilter.startTime"
-                      :placeholder="$t('AbpAuditLogging.SelectDateTime')"
+                      :placeholder="$t('LazyAbp.SelectDateTime')"
                       type="datetime"
                       default-time="00:00:00"
                       style="width: 100%"
@@ -68,10 +68,10 @@
                   </el-form-item>
                 </el-col>
                 <el-col :span="12">
-                  <el-form-item :label="$t('AbpAuditLogging.EndTime')">
+                  <el-form-item :label="$t('LazyAbp.EndTime')">
                     <el-date-picker
                       v-model="dataFilter.endTime"
-                      :placeholder="$t('AbpAuditLogging.SelectDateTime')"
+                      :placeholder="$t('LazyAbp.SelectDateTime')"
                       type="datetime"
                       default-time="23:59:59"
                       style="width: 100%"
@@ -87,7 +87,7 @@
                 @click="resetPagedList"
               >
                 <i class="el-icon-search" />
-                {{ $t('AbpAuditLogging.SecrchLog') }}
+                {{ $t('LazyAbp.SecrchLog') }}
               </el-button>
             </el-form>
           </el-collapse-item>
@@ -107,7 +107,7 @@
       @row-dblclick="onRowDoubleClicked"
     >
       <el-table-column
-        :label="$t('AbpAuditLogging.ApplicationName')"
+        :label="$t('LazyAbp.ApplicationName')"
         prop="applicationName"
         sortable
         width="200px"
@@ -118,7 +118,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpAuditLogging.CreationTime')"
+        :label="$t('LazyAbp.CreationTime')"
         prop="creationTime"
         sortable
         width="200px"
@@ -128,7 +128,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpAuditLogging.UserName')"
+        :label="$t('LazyAbp.UserName')"
         prop="userName"
         sortable
         width="200px"
@@ -139,7 +139,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpAuditLogging.ClientId')"
+        :label="$t('LazyAbp.ClientId')"
         prop="clientId"
         sortable
         width="200px"
@@ -150,7 +150,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpAuditLogging.ClientName')"
+        :label="$t('LazyAbp.ClientName')"
         prop="clientName"
         sortable
         width="200px"
@@ -161,7 +161,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpAuditLogging.ClientIpAddress')"
+        :label="$t('LazyAbp.ClientIpAddress')"
         prop="clientIpAddress"
         sortable
         width="200px"
@@ -172,7 +172,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpAuditLogging.Identity')"
+        :label="$t('LazyAbp.Identity')"
         prop="identity"
         sortable
         width="200px"
@@ -183,7 +183,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpAuditLogging.ActionName')"
+        :label="$t('LazyAbp.ActionName')"
         prop="action"
         sortable
         width="200px"
@@ -206,7 +206,7 @@
             type="primary"
             @click="handleShowSecurityLogDialog(row)"
           >
-            {{ $t('AbpAuditLogging.ShowLogDialog') }}
+            {{ $t('LazyAbp.ShowLogDialog') }}
           </el-button>
           <el-button
             :disabled="!checkPermission(['AbpAuditing.SecurityLog.Delete'])"
@@ -214,7 +214,7 @@
             type="danger"
             @click="handleDeleteSecurityLog(row.id)"
           >
-            {{ $t('AbpAuditLogging.DeleteLog') }}
+            {{ $t('LazyAbp.DeleteLog') }}
           </el-button>
         </template>
       </el-table-column>

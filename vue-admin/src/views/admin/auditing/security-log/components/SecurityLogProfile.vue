@@ -3,16 +3,16 @@
     <el-form label-width="100px">
       <el-tabs v-model="activedTabItem">
         <el-tab-pane
-          :label="$t('AbpAuditLogging.Application')"
+          :label="$t('LazyAbp.Application')"
           name="application"
         >
-          <el-form-item :label="$t('AbpAuditLogging.ApplicationName')">
+          <el-form-item :label="$t('LazyAbp.ApplicationName')">
             <el-input
               v-model="securityLog.applicationName"
               readonly
             />
           </el-form-item>
-          <el-form-item :label="$t('AbpAuditLogging.TenantName')">
+          <el-form-item :label="$t('LazyAbp.TenantName')">
             <el-input
               v-model="securityLog.tenantName"
               readonly
@@ -20,40 +20,40 @@
           </el-form-item>
         </el-tab-pane>
         <el-tab-pane
-          :label="$t('AbpAuditLogging.UserInfo')"
+          :label="$t('LazyAbp.UserInfo')"
           name="userInfo"
         >
-          <el-form-item :label="$t('AbpAuditLogging.UserId')">
+          <el-form-item :label="$t('LazyAbp.UserId')">
             <el-input
               v-model="securityLog.userId"
               readonly
             />
           </el-form-item>
-          <el-form-item :label="$t('AbpAuditLogging.UserName')">
+          <el-form-item :label="$t('LazyAbp.UserName')">
             <el-input
               v-model="securityLog.userName"
               readonly
             />
           </el-form-item>
-          <el-form-item :label="$t('AbpAuditLogging.ClientId')">
+          <el-form-item :label="$t('LazyAbp.ClientId')">
             <el-input
               v-model="securityLog.clientId"
               readonly
             />
           </el-form-item>
-          <el-form-item :label="$t('AbpAuditLogging.ClientName')">
+          <el-form-item :label="$t('LazyAbp.ClientName')">
             <el-input
               v-model="securityLog.clientName"
               readonly
             />
           </el-form-item>
-          <el-form-item :label="$t('AbpAuditLogging.ClientIpAddress')">
+          <el-form-item :label="$t('LazyAbp.ClientIpAddress')">
             <el-input
               v-model="securityLog.clientIpAddress"
               readonly
             />
           </el-form-item>
-          <el-form-item :label="$t('AbpAuditLogging.BrowserInfo')">
+          <el-form-item :label="$t('LazyAbp.BrowserInfo')">
             <el-input
               v-model="securityLog.browserInfo"
               type="textarea"
@@ -62,22 +62,22 @@
           </el-form-item>
         </el-tab-pane>
         <el-tab-pane
-          :label="$t('AbpAuditLogging.Operation')"
+          :label="$t('LazyAbp.Operation')"
           name="operation"
         >
-          <el-form-item :label="$t('AbpAuditLogging.Identity')">
+          <el-form-item :label="$t('LazyAbp.Identity')">
             <el-input
               v-model="securityLog.identity"
               readonly
             />
           </el-form-item>
-          <el-form-item :label="$t('AbpAuditLogging.ActionName')">
+          <el-form-item :label="$t('LazyAbp.ActionName')">
             <el-input
               v-model="securityLog.action"
               readonly
             />
           </el-form-item>
-          <el-form-item :label="$t('AbpAuditLogging.CreationTime')">
+          <el-form-item :label="$t('LazyAbp.CreationTime')">
             <el-input
               :value="getFormatDateTime(securityLog.creationTime)"
               readonly
@@ -86,7 +86,7 @@
         </el-tab-pane>
         <el-tab-pane
           v-if="hasExtraProperties"
-          :label="$t('AbpAuditLogging.Additional')"
+          :label="$t('LazyAbp.Additional')"
           name="extraProperties"
         >
           <el-form-item

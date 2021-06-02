@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3 style="margin-bottom: 30px;">
-      {{ $t('AbpIdentityServer.Client:IdentityProviderRestrictions') }}
+      {{ $t('LazyAbp.Client:IdentityProviderRestrictions') }}
     </h3>
     <el-form
       ref="formEditIdp"
@@ -15,12 +15,12 @@
           v-model="client.enableLocalLogin"
           class="label-title"
         >
-          {{ $t('AbpIdentityServer.Client:EnableLocalLogin') }}
+          {{ $t('LazyAbp.Client:EnableLocalLogin') }}
         </el-checkbox>
       </el-form-item>
       <el-form-item
         prop="provider"
-        :label="$t('AbpIdentityServer.Name')"
+        :label="$t('LazyAbp.Name')"
       >
         <el-input
           v-model="newProvider.provider"
@@ -34,7 +34,7 @@
           @click="onSave"
         >
           <i class="ivu-icon ivu-icon-md-add" />
-          {{ $t('AbpIdentityServer.AddNew') }}
+          {{ $t('LazyAbp.AddNew') }}
         </el-button>
       </el-form-item>
     </el-form>
@@ -56,7 +56,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentityServer.Actions')"
+        :label="$t('LazyAbp.Actions')"
         align="right"
         min-width="80px"
       >

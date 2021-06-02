@@ -22,11 +22,11 @@
         >
           <el-tab-pane
             name="basics"
-            :label="$t('AbpIdentityServer.Basics')"
+            :label="$t('LazyAbp.Basics')"
           >
             <el-form-item
               prop="enabled"
-              :label="$t('AbpIdentityServer.Resource:Enabled')"
+              :label="$t('LazyAbp.Resource:Enabled')"
             >
               <el-switch
                 v-model="apiScope.enabled"
@@ -34,7 +34,7 @@
             </el-form-item>
             <el-form-item
               prop="showInDiscoveryDocument"
-              :label="$t('AbpIdentityServer.ShowInDiscoveryDocument')"
+              :label="$t('LazyAbp.ShowInDiscoveryDocument')"
             >
               <el-switch
                 v-model="apiScope.showInDiscoveryDocument"
@@ -42,22 +42,22 @@
             </el-form-item>
             <el-form-item
               prop="name"
-              :label="$t('AbpIdentityServer.Name')"
+              :label="$t('LazyAbp.Name')"
               :rules="{
                 required: true,
-                message: $t('pleaseInputBy', {key: $t('AbpIdentityServer.Name')}),
+                message: $t('pleaseInputBy', {key: $t('LazyAbp.Name')}),
                 trigger: 'blur'
               }"
             >
               <el-input
                 v-model="apiScope.name"
                 :readonly="isEdit"
-                :placeholder="$t('pleaseInputBy', {key: $t('AbpIdentityServer.Name')})"
+                :placeholder="$t('pleaseInputBy', {key: $t('LazyAbp.Name')})"
               />
             </el-form-item>
             <el-form-item
               prop="displayName"
-              :label="$t('AbpIdentityServer.DisplayName')"
+              :label="$t('LazyAbp.DisplayName')"
             >
               <el-input
                 v-model="apiScope.displayName"
@@ -65,7 +65,7 @@
             </el-form-item>
             <el-form-item
               prop="description"
-              :label="$t('AbpIdentityServer.Description')"
+              :label="$t('LazyAbp.Description')"
             >
               <el-input
                 v-model="apiScope.description"
@@ -74,7 +74,7 @@
           </el-tab-pane>
           <el-tab-pane
             name="userClaim"
-            :label="$t('AbpIdentityServer.UserClaim')"
+            :label="$t('LazyAbp.UserClaim')"
           >
             <user-claim-edit-form
               v-model="apiScope.userClaims"
@@ -83,7 +83,7 @@
           <el-tab-pane
             v-if="isEdit"
             name="properties"
-            :label="$t('AbpIdentityServer.Propertites')"
+            :label="$t('LazyAbp.Propertites')"
           >
             <properties-edit-form
               v-model="apiScope.properties"
@@ -99,7 +99,7 @@
             type="info"
             @click="onCancel"
           >
-            {{ $t('AbpIdentityServer.Cancel') }}
+            {{ $t('LazyAbp.Cancel') }}
           </el-button>
           <el-button
             class="confirm"
@@ -107,7 +107,7 @@
             icon="el-icon-check"
             @click="onSave"
           >
-            {{ $t('AbpIdentityServer.Save') }}
+            {{ $t('LazyAbp.Save') }}
           </el-button>
         </el-form-item>
       </el-form>
