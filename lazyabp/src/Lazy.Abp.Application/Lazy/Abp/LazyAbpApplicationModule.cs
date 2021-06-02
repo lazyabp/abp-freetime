@@ -7,6 +7,7 @@ using Volo.Abp.Identity;
 using Volo.Abp.PermissionManagement;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.FeatureManagement;
+using Volo.Abp.Domain.Entities.Events.Distributed;
 
 namespace Lazy.Abp
 {
@@ -29,6 +30,11 @@ namespace Lazy.Abp
             Configure<AbpAutoMapperOptions>(options =>
             {
                 options.AddMaps<LazyAbpApplicationModule>(validate: true);
+            });
+
+            Configure<AbpDistributedEntityEventOptions>(options =>
+            {
+                options.AutoEventSelectors.Add<Tenant>();
             });
         }
     }

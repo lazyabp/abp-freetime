@@ -272,6 +272,8 @@
     "Notifications:MultiTenancy": "租户通知",
     "Notifications:Users": "用户通知",
     "Notifications:NewTenantRegisterd": "租户创建通知",
-    "Notifications:WelcomeToApplication": "用户欢迎通知"
+    "Notifications:WelcomeToApplication": "用户欢迎通知",
+    "TenantNotFoundById": "租户: {0} 不存在!",
+    "TenantNotFoundByName": "租户: {0} 不存在!"
   }
 }

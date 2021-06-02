@@ -272,6 +272,8 @@
     "Notifications:MultiTenancy": "Multi Tenancy",
     "Notifications:Users": "Users",
     "Notifications:NewTenantRegisterd": "Tenant creation notification",
-    "Notifications:WelcomeToApplication": "User Welcome Notice"
+    "Notifications:WelcomeToApplication": "User Welcome Notice",
+    "TenantNotFoundById": "Tenant: {0} not found!",
+    "TenantNotFoundByName": "Tenant: {0} not found!"
   }
 }

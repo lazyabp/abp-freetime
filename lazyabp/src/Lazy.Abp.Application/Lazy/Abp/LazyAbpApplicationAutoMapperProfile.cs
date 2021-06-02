@@ -7,6 +7,7 @@ using Lazy.Abp.IdentityServer.ApiScopes;
 using Lazy.Abp.IdentityServer.Clients;
 using Lazy.Abp.IdentityServer.Grants;
 using Lazy.Abp.IdentityServer.IdentityResources;
+using Lazy.Abp.TenantManagement;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.Identity;
 using Volo.Abp.IdentityServer.ApiResources;
@@ -14,6 +15,7 @@ using Volo.Abp.IdentityServer.ApiScopes;
 using Volo.Abp.IdentityServer.Clients;
 using Volo.Abp.IdentityServer.Grants;
 using Volo.Abp.IdentityServer.IdentityResources;
+using Volo.Abp.TenantManagement;
 
 namespace Lazy.Abp
 {
@@ -81,6 +83,11 @@ namespace Lazy.Abp
                 .MapExtraProperties();
 
             CreateMap<PersistedGrant, PersistedGrantDto>()
+                .MapExtraProperties();
+
+            CreateMap<TenantConnectionString, TenantConnectionStringDto>();
+
+            CreateMap<Tenant, TenantManagement.TenantDto>()
                 .MapExtraProperties();
         }
     }

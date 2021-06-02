@@ -12,7 +12,7 @@
     <PackageReference Include="Volo.Abp.Account.HttpApi" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.Identity.HttpApi" Version="$(AbpVersion)" />
     <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi" Version="$(AbpVersion)" />
-    <PackageReference Include="Volo.Abp.TenantManagement.HttpApi" Version="$(AbpVersion)" />
+    <!--<PackageReference Include="Volo.Abp.TenantManagement.HttpApi" Version="$(AbpVersion)" />-->
     <PackageReference Include="Volo.Abp.FeatureManagement.HttpApi" Version="$(AbpVersion)" />
     <ProjectReference Include="..\Lazy.Abp.Application.Contracts\Lazy.Abp.Application.Contracts.csproj" />
   </ItemGroup>
