@@ -25,7 +25,7 @@
         type="primary"
         @click="handleCreateClaimType"
       >
-        {{ $t('AbpIdentity.AddClaim') }}
+        {{ $t('LazyAbp.AddClaim') }}
       </el-button>
     </div>
 
@@ -40,7 +40,7 @@
       @sort-change="handleSortChange"
     >
       <el-table-column
-        :label="$t('AbpIdentity.IdentityClaim:Name')"
+        :label="$t('LazyAbp.IdentityClaim:Name')"
         prop="name"
         sortable
         width="300px"
@@ -51,7 +51,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentity.IdentityClaim:ValueType')"
+        :label="$t('LazyAbp.IdentityClaim:ValueType')"
         prop="valueType"
         sortable
         width="150px"
@@ -62,7 +62,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentity.IdentityClaim:Description')"
+        :label="$t('LazyAbp.IdentityClaim:Description')"
         prop="description"
         sortable
         min-width="100%"
@@ -73,7 +73,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentity.IdentityClaim:Regex')"
+        :label="$t('LazyAbp.IdentityClaim:Regex')"
         prop="regex"
         sortable
         width="200px"
@@ -84,7 +84,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentity.IdentityClaim:Required')"
+        :label="$t('LazyAbp.IdentityClaim:Required')"
         prop="required"
         sortable
         width="150px"
@@ -98,7 +98,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        :label="$t('AbpIdentity.IdentityClaim:IsStatic')"
+        :label="$t('LazyAbp.IdentityClaim:IsStatic')"
         prop="isStatic"
         sortable
         width="150px"
@@ -125,7 +125,7 @@
             type="primary"
             @click="handleUpdateClaimType(row)"
           >
-            {{ $t('AbpIdentity.UpdateClaim') }}
+            {{ $t('LazyAbp.UpdateClaim') }}
           </el-button>
           <el-button
             :disabled="row.isStatic"
@@ -133,7 +133,7 @@
             type="danger"
             @click="handleDeleteClaimType(row)"
           >
-            {{ $t('AbpIdentity.DeleteClaim') }}
+            {{ $t('LazyAbp.DeleteClaim') }}
           </el-button>
         </template>
       </el-table-column>
@@ -207,18 +207,18 @@ export default class ClaimType extends mixins(DataListMiXin) {
 
   private handleCreateClaimType() {
     this.editClaimTypeId = ''
-    this.editClaimTypeTitle = this.l('AbpIdentity.IdentityClaim:New')
+    this.editClaimTypeTitle = this.l('LazyAbp.IdentityClaim:New')
     this.showClaimTypeDialog = true
   }
 
   private handleUpdateClaimType(claimType: IdentityClaimType) {
     this.editClaimTypeId = claimType.id
-    this.editClaimTypeTitle = this.l('AbpIdentity.ClaimSubject', { 0: claimType.name })
+    this.editClaimTypeTitle = this.l('LazyAbp.ClaimSubject', { 0: claimType.name })
     this.showClaimTypeDialog = true
   }
 
   private handleDeleteClaimType(claimType: IdentityClaimType) {
-    this.$confirm(this.l('AbpIdentity.WillDeleteClaim', { 0: claimType.name }),
+    this.$confirm(this.l('LazyAbp.WillDeleteClaim', { 0: claimType.name }),
       this.l('AbpUi.AreYouSure'), {
         callback: (action) => {
           if (action === 'confirm') {

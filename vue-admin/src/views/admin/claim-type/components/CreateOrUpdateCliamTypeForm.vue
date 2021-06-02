@@ -18,7 +18,7 @@
     >
       <el-form-item
         prop="name"
-        :label="$t('AbpIdentity.IdentityClaim:Name')"
+        :label="$t('LazyAbp.IdentityClaim:Name')"
       >
         <el-input
           v-model="claimType.name"
@@ -27,7 +27,7 @@
       </el-form-item>
       <el-form-item
         prop="description"
-        :label="$t('AbpIdentity.IdentityClaim:Description')"
+        :label="$t('LazyAbp.IdentityClaim:Description')"
       >
         <el-input
           v-model="claimType.description"
@@ -35,7 +35,7 @@
       </el-form-item>
       <el-form-item
         prop="regex"
-        :label="$t('AbpIdentity.IdentityClaim:Regex')"
+        :label="$t('LazyAbp.IdentityClaim:Regex')"
       >
         <el-input
           v-model="claimType.regex"
@@ -43,7 +43,7 @@
       </el-form-item>
       <el-form-item
         prop="regexDescription"
-        :label="$t('AbpIdentity.IdentityClaim:RegexDescription')"
+        :label="$t('LazyAbp.IdentityClaim:RegexDescription')"
       >
         <el-input
           v-model="claimType.regexDescription"
@@ -51,7 +51,7 @@
       </el-form-item>
       <el-form-item
         prop="valueType"
-        :label="$t('AbpIdentity.IdentityClaim:ValueType')"
+        :label="$t('LazyAbp.IdentityClaim:ValueType')"
       >
         <el-select
           v-model="claimType.valueType"
@@ -68,7 +68,7 @@
       </el-form-item>
       <el-form-item
         prop="required"
-        :label="$t('AbpIdentity.IdentityClaim:Required')"
+        :label="$t('LazyAbp.IdentityClaim:Required')"
       >
         <el-switch
           v-model="claimType.required"
@@ -76,7 +76,7 @@
       </el-form-item>
       <el-form-item
         prop="isStatic"
-        :label="$t('AbpIdentity.IdentityClaim:IsStatic')"
+        :label="$t('LazyAbp.IdentityClaim:IsStatic')"
       >
         <el-switch
           v-model="claimType.isStatic"
@@ -140,10 +140,10 @@ export default class CreateOrUpdateCliamTypeForm extends Mixins(LocalizationMiXi
 
   private claimTypeRules = {
     name: [
-      { required: true, message: this.l('pleaseInputBy', { key: this.l('AbpIdentity.IdentityClaim:Name') }), trigger: 'blur' }
+      { required: true, message: this.l('pleaseInputBy', { key: this.l('LazyAbp.IdentityClaim:Name') }), trigger: 'blur' }
     ],
     valueType: [
-      { required: true, message: this.l('pleaseSelectBy', { key: this.l('AbpIdentity.IdentityClaim:ValueType') }), trigger: 'blur' }
+      { required: true, message: this.l('pleaseSelectBy', { key: this.l('LazyAbp.IdentityClaim:ValueType') }), trigger: 'blur' }
     ]
   }
 
