@@ -3,7 +3,7 @@
     v-el-draggable-dialog
     width="800px"
     :visible="showDialog"
-    :title="$t('AbpIdentity.RoleSubject', {0: role.name})"
+    :title="$t('LazyAbp.RoleSubject', {0: role.name})"
     custom-class="modal-form"
     :show-close="false"
     :close-on-click-modal="false"

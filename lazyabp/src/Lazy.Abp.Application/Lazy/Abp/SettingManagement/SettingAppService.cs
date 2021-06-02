@@ -23,7 +23,7 @@ using Volo.Abp.Users;
 namespace Lazy.Abp.SettingManagement
 {
     [Authorize(AbpSettingManagementPermissions.Settings.Default)]
-    public class SettingAppService : ApplicationService, ISettingAppService
+    public class SettingAppService : LazyAbpAppService, ISettingAppService
     {
         protected AbpLocalizationOptions LocalizationOptions { get; }
 
@@ -44,7 +44,7 @@ namespace Lazy.Abp.SettingManagement
             SettingManager = settingManager;
             SettingDefinitionManager = settingDefinitionManager;
             LocalizationOptions = localizationOptions.Value;
-            LocalizationResource = typeof(AbpSettingManagementResource);
+            //LocalizationResource = typeof(LazyAbpResource);
         }
 
         [Authorize(AbpSettingManagementPermissions.Settings.Manager)]

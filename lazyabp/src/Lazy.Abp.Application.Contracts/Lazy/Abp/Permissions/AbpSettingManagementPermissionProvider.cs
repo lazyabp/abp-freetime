@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lazy.Abp.Localization;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Volo.Abp.Authorization.Permissions;
@@ -19,7 +20,7 @@ namespace Lazy.Abp.Permissions
 
         private static LocalizableString L(string name)
         {
-            return LocalizableString.Create<AbpSettingManagementResource>(name);
+            return LocalizableString.Create<LazyAbpResource>(name);
         }
     }
 }

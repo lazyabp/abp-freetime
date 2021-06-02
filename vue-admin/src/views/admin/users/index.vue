@@ -159,12 +159,12 @@
               >
                 {{ $t('AbpIdentity.ManageClaim') }}
               </el-dropdown-item> -->
-              <el-dropdown-item
+              <!-- <el-dropdown-item
                 :command="{key: 'menu', row}"
                 :disabled="!checkPermission(['Platform.Menu.ManageUsers'])"
               >
                 {{ $t('AppPlatform.Menu:Manage') }}
-              </el-dropdown-item>
+              </el-dropdown-item> -->
               <el-dropdown-item
                 divided
                 :command="{key: 'delete', row}"

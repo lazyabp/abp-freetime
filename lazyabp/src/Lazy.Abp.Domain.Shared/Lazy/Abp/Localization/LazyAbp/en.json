@@ -1,6 +1,7 @@
 {
   "culture": "en",
   "texts": {
+    "Permission:LazyAbp": "LazyAbp",
     "SendRepeatSmsVerifyCode": "Phone verification code cannot be sent repeatedly within {0} minutes!",
     "DuplicatePhoneNumber": "The phone number already exists!",
     "PhoneNumberNotRegisterd": "The registered mobile phone number is not registered!",
@@ -329,6 +330,6 @@
     "DisplayName:Abp.Identity.User.SmsPhoneNumberConfirmed": "Phone number confirmation template",
     "Description:Abp.Identity.User.SmsPhoneNumberConfirmed": "The user confirms the mobile phone verification code template",
     "DisplayName:Abp.Identity.User.SmsRepetInterval": "SMS verification code validity(min)",
-    "Description:Abp.Identity.User.SmsRepetInterval": "The valid time for the user to send SMS verification code, unit m, default 3min",
+    "Description:Abp.Identity.User.SmsRepetInterval": "The valid time for the user to send SMS verification code, unit m, default 3min"
   }
 }

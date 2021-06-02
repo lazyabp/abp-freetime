@@ -114,18 +114,6 @@
               {{ $t('roles.otherOpera') }}<i class="el-icon-arrow-down el-icon--right" />
             </el-button>
             <el-dropdown-menu slot="dropdown">
-              <!-- <el-dropdown-item
-                :command="{key: 'claim', row}"
-                :disabled="!checkPermission(['AbpIdentity.Roles.ManageClaims'])"
-              >
-                {{ $t('AbpIdentity.ManageClaim') }}
-              </el-dropdown-item> -->
-              <el-dropdown-item
-                :command="{key: 'menu', row}"
-                :disabled="!checkPermission(['Platform.Menu.ManageRoles'])"
-              >
-                {{ $t('AppPlatform.Menu:Manage') }}
-              </el-dropdown-item>
               <el-dropdown-item
                 :command="{key: 'permission', row}"
                 :disabled="!checkPermission(['AbpIdentity.Roles.ManagePermissions'])"

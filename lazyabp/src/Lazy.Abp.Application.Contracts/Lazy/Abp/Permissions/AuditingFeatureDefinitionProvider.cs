@@ -1,4 +1,5 @@
-﻿using Volo.Abp.AuditLogging.Localization;
+﻿using Lazy.Abp.Localization;
+using Volo.Abp.AuditLogging.Localization;
 using Volo.Abp.Features;
 using Volo.Abp.Localization;
 using Volo.Abp.Validation.StringValues;
@@ -37,7 +38,7 @@ namespace Lazy.Abp.Permissions
 
         protected LocalizableString L(string name)
         {
-            return LocalizableString.Create<AuditLoggingResource>(name);
+            return LocalizableString.Create<LazyAbpResource>(name);
         }
     }
 }

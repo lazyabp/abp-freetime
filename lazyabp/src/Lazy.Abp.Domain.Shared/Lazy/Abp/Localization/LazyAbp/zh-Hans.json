@@ -1,6 +1,7 @@
 {
   "culture": "zh-Hans",
   "texts": {
+    "Permission:LazyAbp": "LazyAbp管理",
     "SendRepeatSmsVerifyCode": "手机验证码不能在 {0} 分钟内重复发送!",
     "DuplicatePhoneNumber": "手机号已经存在!",
     "PhoneNumberNotRegisterd": "手机号码未注册!",

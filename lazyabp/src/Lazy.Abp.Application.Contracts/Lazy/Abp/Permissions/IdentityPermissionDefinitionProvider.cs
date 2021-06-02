@@ -1,4 +1,5 @@
-﻿using Volo.Abp.Authorization.Permissions;
+﻿using Lazy.Abp.Localization;
+using Volo.Abp.Authorization.Permissions;
 using Volo.Abp.Identity.Localization;
 using Volo.Abp.Localization;
 using Volo.Abp.MultiTenancy;
@@ -43,7 +44,7 @@ namespace Lazy.Abp.Permissions
 
         private static LocalizableString L(string name)
         {
-            return LocalizableString.Create<IdentityResource>(name);
+            return LocalizableString.Create<LazyAbpResource>(name);
         }
     }
 }
