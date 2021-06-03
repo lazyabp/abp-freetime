@@ -204,7 +204,7 @@
                 v-permission="['FeatureManagement.ManageHostFeatures']"
                 :command="{key: 'features', row}"
               >
-                {{ $t('AbpFeatureManagement.ManageFeatures') }}
+                {{ $t('LazyAbp.ManageFeatures') }}
               </el-dropdown-item>
               <el-dropdown-item
                 :command="{key: 'clone', row}"
