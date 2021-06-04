@@ -330,6 +330,8 @@
     "DisplayName:Abp.Identity.User.SmsPhoneNumberConfirmed": "手机确认模板",
     "Description:Abp.Identity.User.SmsPhoneNumberConfirmed": "用户确认手机号验证码模板",
     "DisplayName:Abp.Identity.User.SmsRepetInterval": "重复发送间隔时间(min)",
-    "Description:Abp.Identity.User.SmsRepetInterval": "验证码重复发送的最小时间差,单位为分"
+    "Description:Abp.Identity.User.SmsRepetInterval": "验证码重复发送的最小时间差,单位为分",
+    "ManageFeatures": "管理特性",
+    "Permissions:ManageClientFeatures": "管理客户端特性"
   }
 }

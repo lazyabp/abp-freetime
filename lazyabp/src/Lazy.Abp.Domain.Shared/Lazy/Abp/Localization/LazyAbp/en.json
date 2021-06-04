@@ -330,6 +330,8 @@
     "DisplayName:Abp.Identity.User.SmsPhoneNumberConfirmed": "Phone number confirmation template",
     "Description:Abp.Identity.User.SmsPhoneNumberConfirmed": "The user confirms the mobile phone verification code template",
     "DisplayName:Abp.Identity.User.SmsRepetInterval": "SMS verification code validity(min)",
-    "Description:Abp.Identity.User.SmsRepetInterval": "The valid time for the user to send SMS verification code, unit m, default 3min"
+    "Description:Abp.Identity.User.SmsRepetInterval": "The valid time for the user to send SMS verification code, unit m, default 3min",
+    "ManageFeatures": "Manage Features",
+    "Permissions:ManageClientFeatures": "Manage Client Features"
   }
 }
