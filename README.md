@@ -24,7 +24,7 @@
 
 ###### 4、申明
 
-​		说明一下，本系统，我并非原创（代码），我充只是个代码搬运工。源代码出自： [colinin/abp-vue-admin-element-typescript: vue admin with abp (github.com)](https://github.com/colinin/abp-vue-admin-element-typescript) ，作者的原项目是微服务构架的，这也是我觉得很赞的一个abp vnext开发项目，如您需要微服务构架，请点击链接直接跳过去！
+​		说明一下，本系统，我并非原创（代码），我只是个代码搬运工。源代码出自： [colinin/abp-vue-admin-element-typescript: vue admin with abp (github.com)](https://github.com/colinin/abp-vue-admin-element-typescript) ，作者的原项目是微服务构架的，这也是我觉得很赞的一个abp vnext开发项目，如您需要微服务构架，请点击链接直接跳过去！
 
 
 
