@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Lazy.Abp.Files;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -10,6 +11,8 @@ namespace Lazy.Abp.EntityFrameworkCore
         /* Add DbSet for each Aggregate Root here. Example:
          * public DbSet<Question> Questions { get; set; }
          */
+
+        public DbSet<Media> Medias { get; set; }
 
         public LazyAbpDbContext(DbContextOptions<LazyAbpDbContext> options) 
             : base(options)

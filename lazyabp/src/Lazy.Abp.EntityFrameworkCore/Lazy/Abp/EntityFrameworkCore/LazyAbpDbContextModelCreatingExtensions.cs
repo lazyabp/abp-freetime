@@ -1,4 +1,5 @@
 ﻿using System;
+using Lazy.Abp.Files;
 using Lazy.Abp.Notifications;
 using Lazy.Abp.Subscriptions;
 using Microsoft.EntityFrameworkCore;
@@ -59,6 +60,19 @@ namespace Lazy.Abp.EntityFrameworkCore
 
                 b.HasIndex(p => new { p.TenantId, p.UserId, p.NotificationName })
                 .HasDatabaseName("IX_Tenant_User_Notification_Name")
+                .IsUnique();
+            });
+
+            builder.Entity<Media>(b =>
+            {
+                b.ToTable(options.TablePrefix + "Medias", options.Schema);
+
+                b.Property(p => p.Md5).HasMaxLength(MediaConsts.MaxMd5Length).IsRequired();
+
+                b.ConfigureByConvention();
+
+                b.HasIndex(p => new { p.TenantId, p.Md5 })
+                .HasDatabaseName("IX_Media_Tenant_Md5")
                 .IsUnique();
             });
         }

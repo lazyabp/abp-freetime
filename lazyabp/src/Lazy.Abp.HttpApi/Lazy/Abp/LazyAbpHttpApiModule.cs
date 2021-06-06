@@ -9,6 +9,7 @@ using Volo.Abp.PermissionManagement.HttpApi;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Account;
 using Volo.Abp.TenantManagement;
+using Lazy.Abp.Core;
 
 namespace Lazy.Abp
 {
@@ -19,7 +20,8 @@ namespace Lazy.Abp
         typeof(AbpIdentityHttpApiModule),
         typeof(AbpPermissionManagementHttpApiModule),
         //typeof(AbpTenantManagementHttpApiModule),
-        typeof(AbpFeatureManagementHttpApiModule)
+        typeof(AbpFeatureManagementHttpApiModule),
+        typeof(LazyAbpCoreModule)
     )]
     public class LazyAbpHttpApiModule : AbpModule
     {

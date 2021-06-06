@@ -14,5 +14,13 @@ namespace Lazy.Abp.Permissions
 
             public const string Delete = Default + ".Delete";
         }
+
+        public class Media
+        {
+            public const string Default = GroupName + ".Media";
+
+            public const string Create = Default + ".Create";
+            public const string Delete = Default + ".Delete";
+        }
     }
 }

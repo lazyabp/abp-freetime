@@ -1,4 +1,5 @@
-﻿using Lazy.Abp.Notifications;
+﻿using Lazy.Abp.Files;
+using Lazy.Abp.Notifications;
 using Lazy.Abp.Subscriptions;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
@@ -38,6 +39,7 @@ namespace Lazy.Abp.EntityFrameworkCore
                 options.AddRepository<Notification, EfCoreNotificationRepository>();
                 options.AddRepository<UserNotification, EfCoreUserNotificationRepository>();
                 options.AddRepository<UserSubscribe, EfCoreUserSubscribeRepository>();
+                options.AddRepository<Media, EfCoreMediaRepository>();
 
                 options.AddDefaultRepositories(includeAllEntities: true);
             });

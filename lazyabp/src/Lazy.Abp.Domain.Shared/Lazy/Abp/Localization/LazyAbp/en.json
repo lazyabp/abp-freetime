@@ -332,6 +332,7 @@
     "DisplayName:Abp.Identity.User.SmsRepetInterval": "SMS verification code validity(min)",
     "Description:Abp.Identity.User.SmsRepetInterval": "The valid time for the user to send SMS verification code, unit m, default 3min",
     "ManageFeatures": "Manage Features",
-    "Permissions:ManageClientFeatures": "Manage Client Features"
+    "Permissions:ManageClientFeatures": "Manage Client Features",
+    "Permission:Media": "Media Files"
   }
 }

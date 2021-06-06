@@ -332,6 +332,7 @@
     "DisplayName:Abp.Identity.User.SmsRepetInterval": "重复发送间隔时间(min)",
     "Description:Abp.Identity.User.SmsRepetInterval": "验证码重复发送的最小时间差,单位为分",
     "ManageFeatures": "管理特性",
-    "Permissions:ManageClientFeatures": "管理客户端特性"
+    "Permissions:ManageClientFeatures": "管理客户端特性",
+    "Permission:Media": "文件管理"
   }
 }

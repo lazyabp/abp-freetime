@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Lazy.Abp.Auditing.Logging;
 using Lazy.Abp.Auditing.Security;
+using Lazy.Abp.Files;
+using Lazy.Abp.Files.Dto;
 using Lazy.Abp.Identity;
 using Lazy.Abp.IdentityServer.ApiResources;
 using Lazy.Abp.IdentityServer.ApiScopes;
@@ -88,6 +90,9 @@ namespace Lazy.Abp
             CreateMap<TenantConnectionString, TenantConnectionStringDto>();
 
             CreateMap<Tenant, TenantManagement.TenantDto>()
+                .MapExtraProperties();
+
+            CreateMap<Media, MediaDto>()
                 .MapExtraProperties();
         }
     }
