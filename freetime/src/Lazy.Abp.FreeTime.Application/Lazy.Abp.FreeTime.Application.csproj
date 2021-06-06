@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\lazyabp\src\Lazy.Abp.Application\Lazy.Abp.Application.csproj" />
+    <PackageReference Include="Lazy.Abp.Application" Version="4.3.100-dev-02" />
     <ProjectReference Include="..\Lazy.Abp.FreeTime.Domain\Lazy.Abp.FreeTime.Domain.csproj" />
     <ProjectReference Include="..\Lazy.Abp.FreeTime.Application.Contracts\Lazy.Abp.FreeTime.Application.Contracts.csproj" />
   </ItemGroup>
