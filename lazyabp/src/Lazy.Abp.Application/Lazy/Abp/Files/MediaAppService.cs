@@ -45,6 +45,7 @@ namespace Lazy.Abp.Files
             );
         }
 
+        [Authorize(LazyAbpPermissions.Media.Create)]
         public async Task<MediaDto> CreateAsync(MediaCreateDto input)
         {
             var media = await _repository.GetByMd5Async(input.Md5);
