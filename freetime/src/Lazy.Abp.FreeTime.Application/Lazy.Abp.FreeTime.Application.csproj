@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lazy.Abp.Application" Version="4.3.0-dev-03" />
+    <PackageReference Include="Lazy.Abp.Application" Version="4.3.0-dev-04" />
     <ProjectReference Include="..\Lazy.Abp.FreeTime.Domain\Lazy.Abp.FreeTime.Domain.csproj" />
     <ProjectReference Include="..\Lazy.Abp.FreeTime.Application.Contracts\Lazy.Abp.FreeTime.Application.Contracts.csproj" />
   </ItemGroup>

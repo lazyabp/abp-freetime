@@ -37,7 +37,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lazy.Abp.Notifications.SignalR" Version="4.3.0-dev-03" />
+    <PackageReference Include="Lazy.Abp.Notifications.SignalR" Version="4.3.0-dev-04" />
     <ProjectReference Include="..\Lazy.Abp.FreeTime.Application\Lazy.Abp.FreeTime.Application.csproj" />
     <ProjectReference Include="..\Lazy.Abp.FreeTime.HttpApi\Lazy.Abp.FreeTime.HttpApi.csproj" />
     <ProjectReference Include="..\Lazy.Abp.FreeTime.EntityFrameworkCore.DbMigrations\Lazy.Abp.FreeTime.EntityFrameworkCore.DbMigrations.csproj" />
