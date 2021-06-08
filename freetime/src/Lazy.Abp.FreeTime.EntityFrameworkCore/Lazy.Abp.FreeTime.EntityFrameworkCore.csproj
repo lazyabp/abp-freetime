@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lazy.Abp.EntityFrameworkCore" Version="4.3.100-dev-02" />
+    <PackageReference Include="Lazy.Abp.EntityFrameworkCore" Version="4.3.0-dev-03" />
     <ProjectReference Include="..\Lazy.Abp.FreeTime.Domain\Lazy.Abp.FreeTime.Domain.csproj" />
     <PackageReference Include="Volo.Abp.EntityFrameworkCore.SqlServer" Version="$(AbpVersion)" />
   </ItemGroup>
