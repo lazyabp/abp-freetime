@@ -87,6 +87,7 @@ export default {
     claimType: '声明类型',
     profileSetting: '个人设置',
     changePassword: '修改密码',
+    othersManagement: '其它管理'
   },
   navbar: {
     logOut: '退出登录',
@@ -484,7 +485,12 @@ export default {
     correctEmailAddress: '正确的邮件地址',
     correctPhoneNumber: '正确的手机号码',
     operatingFast: '您的操作过快,请稍后再试!',
-    request404: '您所请求的资源不存在!'
+    request404: '您所请求的资源不存在!',
+    search: '查询',
+    minSize: '最小',
+    maxSize: '最大',
+    starDate: '起始日期',
+    endDate: '介绍日期',
   },
   messages: {
     noNotifications: '没有通知',
@@ -519,7 +525,12 @@ export default {
     paused: '已暂停',
     uploadSuccess: '上传成功',
     folderNameIsRequired: '目录名称不能为空',
-    folderCreateSuccess: '目录 {name} 已创建!'
+    folderCreateSuccess: '目录 {name} 已创建!',
+    fileManagement: '文件管理',
+    thumbnail: '缩略图',
+    image: '图片',
+    domain: '域名',
+    scene: '场景'
   },
   AbpValidation: {
     ThisFieldIsNotAValidEmailAddress: '字段不是有效的邮箱地址',

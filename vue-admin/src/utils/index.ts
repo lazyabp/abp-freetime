@@ -13,7 +13,9 @@ export function generateTree(array: any, id = null, parentIdKey = 'parentId') {
 export function urlStringify(payload: any) {
   let urlParam = ''
   Object.keys(payload).forEach(key => {
-    urlParam += '&' + key + '=' + payload[key]
+    if (payload[key] !== null && payload[key] !== undefined) {
+      urlParam += '&' + key + '=' + payload[key]
+    }
   })
   urlParam = urlParam.substring(1)
   return urlParam

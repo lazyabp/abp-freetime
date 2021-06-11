@@ -15,9 +15,10 @@ import Layout from '@/layout/index.vue'
 
 import adminRouter from './modules/admin'
 import auditingRouter from './modules/auditing'
-import apigatewayRouter from './modules/apigateway'
+//import apigatewayRouter from './modules/apigateway'
 import identityServerRouter from './modules/identityServer'
-import containerRouter from './modules/container'
+//import containerRouter from './modules/container'
+import commonRouter from './modules/common'
 
 Vue.use(Router)
 /*
@@ -168,6 +169,7 @@ export const asyncRoutes: RouteConfig[] = [
   auditingRouter,
   // apigatewayRouter,
   identityServerRouter,
+  commonRouter,
   // containerRouter,
   // {
   //   path: '*',
