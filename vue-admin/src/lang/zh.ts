@@ -491,6 +491,7 @@ export default {
     maxSize: '最大',
     starDate: '起始日期',
     endDate: '介绍日期',
+    close: '关闭'
   },
   messages: {
     noNotifications: '没有通知',
@@ -527,6 +528,8 @@ export default {
     folderNameIsRequired: '目录名称不能为空',
     folderCreateSuccess: '目录 {name} 已创建!',
     fileManagement: '文件管理',
+    maxfilesLimit: '一次最多只能上传{max}个文件',
+    uploadTips: '将文件拖到此处，或[点击上传]',
     thumbnail: '缩略图',
     image: '图片',
     domain: '域名',

@@ -2,128 +2,95 @@
   <el-dialog
     :title="$t('fileSystem.upload')"
     :visible="showDialog"
+    :close-on-click-modal="false"
+    width="640px"
     custom-class="modal-form"
     @close="onFormClosed"
   >
-    <uploader
-      ref="uploader"
-      :options="options"
-      :auto-start="false"
-      class="uploader-pane"
-      @file-added="onFileAdded"
-      @file-error="onFileError"
-      @file-complete="onFileUploadCompleted"
-    >
-      <uploader-unsupport />
-      <uploader-drop>
-        <uploader-btn :attrs="attrs">
-          {{ $t('fileSystem.addFile') }}
-        </uploader-btn>
-      </uploader-drop>
-      <uploader-list />
-    </uploader>
+    <el-upload
+      class="upload-demo"
+      ref="upload"
+      drag
+      :action="fileUploadUrl"
+      :on-success="handleUploadSuccess"
+      :headers="headers"
+      :accept="accept"
+      :limit="limit"
+      :file-list="files"
+      :auto-upload="false"
+      :on-exceed="onMaxExceed"
+      multiple>
+      <i class="el-icon-upload"></i>
+      <div class="el-upload__text">{{ $t('fileSystem.uploadTips') }}</div>
+      <div class="el-upload__tip" slot="tip">{{ $t('fileSystem.maxfilesLimit', { max: limit }) }}</div>
+    </el-upload>
+    <span slot="footer" class="dialog-footer">
+      <el-button @click="onFormClosed">{{ $t('global.close') }}</el-button>
+      <el-button type="primary" @click="onSubmit">{{ $t('fileSystem.upload') }}</el-button>
+    </span>
   </el-dialog>
 </template>
 
 <script lang="ts">
+import { Upload } from 'element-ui'
 import { Component, Mixins, Prop, Watch } from 'vue-property-decorator'
-import { StreamUploadUrl } from '@/api/media-api'
+import { StreamUploadUrl, MediaDto } from '@/api/media-api'
 import AuthHeaderMiXin from '@/mixins/AuthHeaderMiXin'
-
-export class UploadOptions {
-  target!: string
-  fileParameterName!: string
-  maxChunkRetries!: number
-  headers?: any
-  query?: any
-  permanentErrors?: number[]
-  successStatuses?: number[]
-
-  constructor() {
-    this.query = {}
-    this.headers = {}
-    this.successStatuses = new Array<number>()
-    this.permanentErrors = new Array<number>()
-  }
-}
+import LocalizationMiXin from '@/mixins/LocalizationMiXin'
 
 @Component({
   name: 'MediaUploadDialog'
 })
-export default class extends Mixins(AuthHeaderMiXin) {
-  @Prop({ default: () => new UploadOptions() })
-  private options!: UploadOptions
+export default class extends Mixins(LocalizationMiXin, AuthHeaderMiXin) {
+  @Prop({ default: 9 })
+  private limit!: number
 
-  @Prop({ default: '' })
-  private bucket!: string
-
-  @Prop({ default: '' })
-  private path!: string
+  @Prop({ default: 'image/*' })
+  private accept!: string
 
   @Prop({ default: false })
   private showDialog!: boolean
 
-  private attrs!: {[key: string]: any}
-  private files?: any = {}
+  private fileUploadUrl = StreamUploadUrl
+  private files: any = {}
+  private headers: any = {}
 
-  constructor() {
-    super()
-    this.attrs = {
-      accept: ['image/*', 'document/*', 'video/*', 'audio/*']
-    }
-    this.options.target = StreamUploadUrl
-    this.options.successStatuses = [200, 201, 202, 204, 205]
-    this.options.permanentErrors = [400, 401, 403, 404, 415, 500, 501]
-    this.options.headers = this.getAuthHeaders()
+  @Watch('showDialog', { immediate: true })
+  private onShowDialogChanged() {
+    this.files = []
+    this.headers = this.getAuthHeaders()
   }
 
   public close() {
-    this.files = {}
-    const uploadControl = this.$refs.uploader as any
-    uploadControl.files = []
-    uploadControl.fileList = []
-    uploadControl.uploader.cancel()
+    this.files = []
   }
 
-  @Watch('bucket', { immediate: true })
-  private onBucketChanged() {
-    this.options.query.bucket = this.bucket
+  private handleUploadSuccess(res: MediaDto, file: any) {
+    this.files.push({
+      name: res.src,
+      url: res.url
+    })
+
+    this.$emit('onFileUploaded', res)
   }
 
-  @Watch('path', { immediate: true })
-  private onPathChanged() {
-    this.options.query.path = this.path
+  private onMaxExceed() {
+    this.$message.error(this.l('maxfilesLimit', { max: this.limit }));
   }
 
-  private onFileAdded(file: any) {
-    this.files[file.name] = file.chunkSize
-    file.uploader.fileStatusText.error = this.$t('fileSystem.uploadError')
-    file.uploader.fileStatusText.paused = this.$t('fileSystem.paused')
-    file.uploader.fileStatusText.success = this.$t('fileSystem.uploadSuccess')
-    file.uploader.fileStatusText.waiting = this.$t('fileSystem.waitingUpload')
-    file.uploader.fileStatusText.uploading = this.$t('fileSystem.uploading')
-  }
-
-  private onFileError(rootFile: any, file: any, message: any) {
-    const abpResponse = JSON.parse(message)
-    this.$message.error(abpResponse.error.message)
-  }
-
-  private onFileUploadCompleted(file: any) {
-    const uploadControl = this.$refs.uploader as any
-    if (uploadControl && uploadControl.uploader) {
-      uploadControl.uploader.removeFile(file)
-    }
-
-    this.$emit('onFileUploaded', file.name)
+  private onSubmit() {
+    const uploader = this.$refs.upload as Upload
+    uploader.submit()
   }
 
   private onFormClosed() {
-    this.$emit('closed')
+    this.$emit('closed', this.files)
   }
 }
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="scss">
+.el-upload--text .el-upload-dragger {
+  width: 600px;
+}
 </style>

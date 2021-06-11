@@ -35,16 +35,7 @@
         >
           {{ $t('global.search') }}
         </el-button>
-        <el-upload 
-         :action="uploadAction"
-         :on-success="handleUploadSuccess"
-         :show-file-list="false"
-         :headers="headers"
-         :disabled="!checkPermission(['LazyAbp.Media.Create'])"
-         :style="{display: 'inline-block', 'margin-left': '10px'}"
-        >
-          <el-button type="success" icon="el-icon-upload">{{ $t('fileSystem.upload') }}</el-button>
-        </el-upload>
+        <el-button type="success" icon="el-icon-upload" @click="showUploadDialog=true">{{ $t('fileSystem.upload') }}</el-button>
       </el-form>
     </div>
 
@@ -161,22 +152,31 @@
       :limit.sync="pageSize"
       @pagination="refreshPagedData"
     />
+
+    <media-upload-dialog
+      ref="mediaUploadDialog"
+      accept="image/*"
+      :show-dialog="showUploadDialog"
+      @closed="showUploadDialog=false"
+      @onFileUploaded="onFileUploaded"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { abpPagerFormat, dateFormat } from '@/utils'
 import DataListMiXin from '@/mixins/DataListMiXin'
-import AuthHeaderMiXin from '@/mixins/AuthHeaderMiXin'
 import Component, { mixins } from 'vue-class-component'
-import MediaApiService, { StreamUploadUrl, MediaDto, MediaListRequestDto } from '@/api/media-api'
+import MediaApiService, { MediaDto, MediaListRequestDto } from '@/api/media-api'
 import { checkPermission } from '@/utils/permission'
 import Pagination from '@/components/Pagination/index.vue'
+import MediaUploadDialog from './components/MediaUploadDialog.vue'
 
 @Component({
   name: 'Media',
   components: {
-    Pagination
+    Pagination,
+    MediaUploadDialog
   },
   filters: {
     dateTimeFilter(datetime: string) {
@@ -188,16 +188,14 @@ import Pagination from '@/components/Pagination/index.vue'
     checkPermission
   }
 })
-export default class extends mixins(DataListMiXin, AuthHeaderMiXin) {
+export default class extends mixins(DataListMiXin) {
 
   public dataFilter = new MediaListRequestDto()
-  private uploadAction = StreamUploadUrl
   private dateRange = []
-  private headers = {}
+  private showUploadDialog = false
 
   mounted() {
     this.refreshPagedData()
-    this.headers = this.getAuthHeaders()
   }
 
   protected processDataFilter() {
@@ -216,7 +214,8 @@ export default class extends mixins(DataListMiXin, AuthHeaderMiXin) {
     return MediaApiService.getMedias(filter)
   }
 
-  private handleUploadSuccess(res: MediaDto, file: any) {
+  private onFileUploaded(files: any[]) {
+    this.$message.success(this.l('fileSystem.uploadSuccess'))
     this.refreshPagedData()
   }
 
