@@ -16,7 +16,7 @@
       :headers="headers"
       :accept="accept"
       :limit="limit"
-      :file-list="files"
+      :file-list="fileList"
       :auto-upload="false"
       :on-exceed="onMaxExceed"
       multiple>
@@ -26,7 +26,8 @@
     </el-upload>
     <span slot="footer" class="dialog-footer">
       <el-button @click="onFormClosed">{{ $t('global.close') }}</el-button>
-      <el-button type="primary" @click="onSubmit">{{ $t('fileSystem.upload') }}</el-button>
+      <el-button type="warning" @click="onStartUpload">{{ $t('fileSystem.upload') }}</el-button>
+      <el-button type="primary" @click="onConfirm">{{ $t('global.confirm') }}</el-button>
     </span>
   </el-dialog>
 </template>
@@ -52,39 +53,46 @@ export default class extends Mixins(LocalizationMiXin, AuthHeaderMiXin) {
   private showDialog!: boolean
 
   private fileUploadUrl = StreamUploadUrl
-  private files: any = {}
+  private files: MediaDto[] = []
+  private fileList: any = []
   private headers: any = {}
 
   @Watch('showDialog', { immediate: true })
   private onShowDialogChanged() {
     this.files = []
+    this.fileList = []
     this.headers = this.getAuthHeaders()
   }
 
   public close() {
     this.files = []
+    this.fileList = []
   }
 
   private handleUploadSuccess(res: MediaDto, file: any) {
-    this.files.push({
-      name: res.src,
-      url: res.url
-    })
-
-    this.$emit('onFileUploaded', res)
+    this.files.push(res)
+    // this.$emit('onFileUploaded', res)
   }
 
   private onMaxExceed() {
     this.$message.error(this.l('maxfilesLimit', { max: this.limit }));
   }
 
-  private onSubmit() {
+  private onStartUpload() {
     const uploader = this.$refs.upload as Upload
     uploader.submit()
   }
 
+  private onConfirm() {
+    if (this.limit === 1) {
+      this.$emit('onFileUploaded', this.files.pop())
+    } else {
+      this.$emit('onFileUploaded', this.files)
+    }
+  }
+
   private onFormClosed() {
-    this.$emit('closed', this.files)
+    this.$emit('closed', [])
   }
 }
 </script>
