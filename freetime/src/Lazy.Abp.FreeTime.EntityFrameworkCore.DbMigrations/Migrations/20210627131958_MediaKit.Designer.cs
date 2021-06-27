@@ -4,15 +4,17 @@ using Lazy.Abp.FreeTime.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
 namespace Lazy.Abp.FreeTime.Migrations
 {
     [DbContext(typeof(FreeTimeMigrationsDbContext))]
-    partial class FreeTimeMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210627131958_MediaKit")]
+    partial class MediaKit
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

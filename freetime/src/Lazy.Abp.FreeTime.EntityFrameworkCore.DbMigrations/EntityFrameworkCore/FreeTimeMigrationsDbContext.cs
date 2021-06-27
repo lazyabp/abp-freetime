@@ -1,4 +1,5 @@
 ﻿using Lazy.Abp.EntityFrameworkCore;
+using Lazy.Abp.MediaKit.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
@@ -43,7 +44,7 @@ namespace Lazy.Abp.FreeTime.EntityFrameworkCore
             builder.ConfigureLazyAbp();
 
             /* Configure your own tables/entities inside the ConfigureFreeTime method */
-
+            builder.ConfigureMediaKit();
             builder.ConfigureFreeTime();
         }
     }
