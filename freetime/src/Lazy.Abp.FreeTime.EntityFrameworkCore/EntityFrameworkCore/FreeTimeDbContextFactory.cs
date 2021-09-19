@@ -7,18 +7,18 @@ namespace Lazy.Abp.FreeTime.EntityFrameworkCore
 {
     /* This class is needed for EF Core console commands
      * (like Add-Migration and Update-Database commands) */
-    public class FreeTimeMigrationsDbContextFactory : IDesignTimeDbContextFactory<FreeTimeMigrationsDbContext>
+    public class FreeTimeDbContextFactory : IDesignTimeDbContextFactory<FreeTimeDbContext>
     {
-        public FreeTimeMigrationsDbContext CreateDbContext(string[] args)
+        public FreeTimeDbContext CreateDbContext(string[] args)
         {
             FreeTimeEfCoreEntityExtensionMappings.Configure();
 
             var configuration = BuildConfiguration();
 
-            var builder = new DbContextOptionsBuilder<FreeTimeMigrationsDbContext>()
+            var builder = new DbContextOptionsBuilder<FreeTimeDbContext>()
                 .UseSqlServer(configuration.GetConnectionString("Default"));
 
-            return new FreeTimeMigrationsDbContext(builder.Options);
+            return new FreeTimeDbContext(builder.Options);
         }
 
         private static IConfigurationRoot BuildConfiguration()

@@ -7,7 +7,7 @@ namespace Lazy.Abp.FreeTime.DbMigrator
 {
     [DependsOn(
         typeof(AbpAutofacModule),
-        typeof(FreeTimeEntityFrameworkCoreDbMigrationsModule),
+        typeof(FreeTimeEntityFrameworkCoreModule),
         typeof(FreeTimeApplicationContractsModule)
         )]
     public class FreeTimeDbMigratorModule : AbpModule

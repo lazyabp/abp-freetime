@@ -37,7 +37,7 @@ namespace Lazy.Abp.FreeTime.Web
     [DependsOn(
         typeof(FreeTimeHttpApiModule),
         typeof(FreeTimeApplicationModule),
-        typeof(FreeTimeEntityFrameworkCoreDbMigrationsModule),
+        typeof(FreeTimeEntityFrameworkCoreModule),
         typeof(LazyAbpNotificationsSignalRModule),
         typeof(AbpAutofacModule),
         typeof(AbpAccountWebIdentityServerModule),
