@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lazy.Abp.Domain.Shared" Version="4.3.0-dev-06" />
+    <PackageReference Include="Lazy.Abp.Domain.Shared" Version="4.3.0-dev-07" />
   </ItemGroup>
 
 </Project>
